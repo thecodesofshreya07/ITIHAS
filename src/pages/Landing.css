@@ -1,0 +1,47 @@
+.landing {
+  height: 100vh;
+  width: 100vw;
+  background: url("/src/assets/background.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #2a2218;
+}
+.landing-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 8rem;
+  letter-spacing: 6px;
+  color:rgba(10, 8, 5, 0.95);
+  text-shadow: 0 0 20px rgba(230, 201, 140, 0.3);
+}
+
+.landing-tagline {
+  font-family: 'Crimson Text', serif;
+  font-size: 2rem;
+  margin-top: 15px;
+  color: #3f321e;
+  font-style: italic;
+}
+
+.start-btn {
+  margin-top: 60px;
+  padding: 14px 40px;
+  font-size: 1.2rem;
+
+  font-family: 'Cinzel', serif;
+  background: transparent;
+  border: 2px solid #5c4a3a;
+  color: #5c4a3a;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  background: #3f321e;
+  color: white;
+  transform: scale(1.08);
+}
