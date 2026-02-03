@@ -1,0 +1,46 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #1b1b1b;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 320px;
+  color: #f5deb3;
+  animation: scaleIn 0.4s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.auth-box input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid #c4a24f;
+  color: white;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 0.7rem;
+  background: #c4a24f;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}

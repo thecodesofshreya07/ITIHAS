@@ -4,6 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+body {
+  font-family: 'Crimson Text', serif;
+  background: url('/src/assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #2a2218;
+}
 
 .logo {
   height: 6em;
