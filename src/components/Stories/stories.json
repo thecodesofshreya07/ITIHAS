@@ -1,0 +1,212 @@
+[
+  {
+    "id": "french-revolution",
+    "title": "The French Revolution",
+    "period": "1789 – 1799",
+    "location": "France, Europe",
+    "category": "Political Upheaval",
+    "shortDescription": "A decade of radical social and political transformation that ended monarchy and reshaped the modern world.",
+    "sections": {
+      "background": "By the late 18th century, France was a kingdom in crisis. The Ancien Régime — a rigid social structure dividing society into three estates — left the vast majority of people with crushing tax burdens and no political voice. King Louis XVI faced an empty treasury, partly depleted by French involvement in the American Revolution. Enlightenment ideas of liberty, equality, and popular sovereignty were spreading rapidly through salons and pamphlets, challenging the divine right of kings and fueling discontent among the growing bourgeoisie and impoverished peasantry alike.",
+      "trigger": "The immediate spark came in May 1789 when Louis XVI convened the Estates-General to address the financial crisis. The Third Estate (commoners) demanded greater representation but was dismissed. On June 20, they gathered at a nearby tennis court and swore an oath not to dissolve until France had a constitution — the famous Tennis Court Oath. Three weeks later, rumors of royal troops massing around Paris ignited the powder keg. On July 14, 1789, a furious mob stormed the Bastille fortress, a symbol of royal tyranny, and the Revolution was born.",
+      "majorEvents": "The National Assembly abolished feudalism and issued the Declaration of the Rights of Man in August 1789, enshrining liberty and equality before the law. In October, thousands of women marched on Versailles, forcing the royal family to relocate to Paris. In 1791, Louis XVI attempted to flee France but was captured at Varennes, destroying public trust in the monarchy. A new Legislative Assembly governed, but radical Jacobins led by Maximilien Robespierre soon dominated. The monarchy was abolished in 1792, Louis XVI was guillotined in January 1793, and the Reign of Terror (1793–94) saw over 17,000 people executed. Eventually Robespierre himself was arrested and guillotined in the Thermidorian Reaction of July 1794.",
+      "consequences": "The Revolution abolished feudalism across France, dismantled the political power of the Catholic Church, and permanently ended absolute monarchy. A new legal framework — the basis of the Napoleonic Code — standardized French law. Napoleon Bonaparte emerged from the revolutionary chaos, seizing power in 1799 and eventually declaring himself Emperor. The social contract between rulers and citizens was fundamentally rewritten, establishing the principle that legitimate government derives from the people, not divine mandate.",
+      "globalImpact": "The French Revolution sent shockwaves across the globe. It inspired revolutionary movements throughout Europe and Latin America, accelerating the collapse of colonial empires. Its ideals of liberté, égalité, fraternité became rallying cries for generations of reformers, abolitionists, and nationalists. European monarchies formed coalitions to contain France, reshaping the continent's balance of power. The Revolution also introduced modern political terminology — 'left' and 'right' originate from seating positions in the French National Assembly."
+    },
+    "didYouKnow": "The word 'guillotine' comes from Dr. Joseph-Ignace Guillotin, who proposed it as a more humane form of execution — though he didn't actually invent the device. He reportedly found it so disturbing to have his name attached to it that his family eventually petitioned to have it renamed.",
+    "quiz": [
+      {
+        "question": "What event on July 14, 1789 is considered the symbolic start of the French Revolution?",
+        "options": ["The Tennis Court Oath", "The March on Versailles", "The Storming of the Bastille", "The execution of Louis XVI"],
+        "correctIndex": 2
+      },
+      {
+        "question": "What was the Reign of Terror?",
+        "options": ["A period of foreign invasion", "A phase of mass executions led by radical Jacobins", "The rule of Napoleon Bonaparte", "The storming of royal palaces"],
+        "correctIndex": 1
+      },
+      {
+        "question": "What political terms originated from the seating in the French National Assembly?",
+        "options": ["Democrat and Republican", "Liberal and Conservative", "Left and Right", "Federalist and Nationalist"],
+        "correctIndex": 2
+      }
+    ],
+    "previousEventId": "american-revolution",
+    "nextEventId": "napoleonic-wars"
+  },
+  {
+    "id": "american-revolution",
+    "title": "The American Revolution",
+    "period": "1765 – 1783",
+    "location": "North America",
+    "category": "Political Upheaval",
+    "shortDescription": "Thirteen British colonies declared independence and forged a new nation founded on Enlightenment ideals of liberty.",
+    "sections": {
+      "background": "By the 1760s, Britain's thirteen American colonies had developed distinct identities, economies, and a growing sense of self-governance through colonial assemblies. The costly Seven Years' War left Britain deeply in debt, and Parliament turned to the colonies for revenue through a series of new taxes. Colonists, who had no representation in Parliament, viewed these measures as a fundamental violation of their rights as Englishmen. The phrase 'no taxation without representation' captured a growing constitutional and philosophical argument that ignited widespread colonial resistance.",
+      "trigger": "The 1765 Stamp Act, which taxed printed materials, provoked organized boycotts and the formation of the Sons of Liberty. Tensions escalated with the Boston Massacre (1770) and the Boston Tea Party (1773), where colonists dumped British tea into the harbor to protest the Tea Act. Britain responded with the Coercive Acts, which colonists called the Intolerable Acts, effectively eliminating Massachusetts self-governance. In April 1775, British troops marching to seize colonial weapons clashed with militiamen at Lexington and Concord — the 'shot heard round the world' — and the war began.",
+      "majorEvents": "The Second Continental Congress convened in 1775, appointing George Washington as commander of the Continental Army. On July 4, 1776, Congress adopted Thomas Jefferson's Declaration of Independence, formally severing ties with Britain. The war see-sawed for years, with Washington's army enduring brutal winters at Valley Forge. The pivotal Battle of Saratoga (1777) convinced France to officially ally with the Americans, providing crucial military and financial support. The siege of Yorktown in 1781, where British General Cornwallis surrendered, effectively ended major combat operations.",
+      "consequences": "The 1783 Treaty of Paris formally recognized American independence, granting the new nation territory east of the Mississippi River. The Constitutional Convention of 1787 produced the U.S. Constitution, establishing a federal republic with separation of powers and a Bill of Rights. The new government became a global experiment in constitutional democracy, blending Enlightenment philosophy with practical governance. Former colonists now faced the profound challenge of building a nation while reconciling the ideals of liberty with the institution of slavery.",
+      "globalImpact": "The American Revolution proved that colonies could successfully break free from European empires, inspiring Latin American independence movements. French military involvement deepened France's financial crisis, contributing to conditions that sparked the French Revolution. The Declaration of Independence became one of history's most influential documents, its language of universal rights echoing in constitutions and revolutionary manifestos worldwide. The American experiment demonstrated that republics could function at a large scale, challenging centuries of monarchical tradition."
+    },
+    "didYouKnow": "Thomas Jefferson's original draft of the Declaration of Independence contained a passage condemning the slave trade and blaming King George III for introducing slavery to the colonies. It was removed by the Continental Congress to secure support from Southern delegates and those with economic ties to the slave trade.",
+    "quiz": [
+      {
+        "question": "What phrase best captured colonial opposition to British taxation?",
+        "options": ["Give me liberty or give me death", "No taxation without representation", "We the People", "Don't tread on me"],
+        "correctIndex": 1
+      },
+      {
+        "question": "Which battle convinced France to formally ally with the Americans?",
+        "options": ["Battle of Bunker Hill", "Battle of Trenton", "Battle of Saratoga", "Siege of Yorktown"],
+        "correctIndex": 2
+      },
+      {
+        "question": "When was the Declaration of Independence adopted?",
+        "options": ["July 4, 1775", "July 4, 1776", "July 4, 1783", "July 4, 1787"],
+        "correctIndex": 1
+      }
+    ],
+    "previousEventId": "magna-carta",
+    "nextEventId": "french-revolution"
+  },
+  {
+    "id": "napoleonic-wars",
+    "title": "The Napoleonic Wars",
+    "period": "1803 – 1815",
+    "location": "Europe, Middle East, Americas",
+    "category": "Military Conflict",
+    "shortDescription": "Napoleon Bonaparte's military campaigns reshaped Europe's political map and spread revolutionary ideals across the continent.",
+    "sections": {
+      "background": "Napoleon Bonaparte rose from a Corsican military officer to First Consul and then Emperor of the French on the back of the Revolution's chaos. His genius as a military commander and political strategist allowed France to dominate the continent after defeating the First and Second Coalitions. By 1803, Britain and France were at war again after only a brief peace, and Napoleon — unable to match British naval power — pivoted to dominating Europe by land, forging a continental empire through brilliant combined-arms tactics and diplomatic maneuvering.",
+      "trigger": "Napoleon's coronation as Emperor in December 1804 alarmed European monarchies who saw him as embodying the revolutionary threat to their legitimacy. His annexation of territories across Italy, Germany, and the Low Countries, along with his Continental System designed to strangle British trade, forced coalition after coalition to form against him. The execution of the Duke of Enghien — a Bourbon prince — permanently alienated royalist Europe and made war essentially inevitable.",
+      "majorEvents": "Napoleon's greatest triumph came at Austerlitz in 1805, defeating a combined Austrian-Russian army. He restructured Europe with the Treaty of Pressburg, dissolving the Holy Roman Empire and creating the Confederation of the Rhine. The Battle of Trafalgar (1805) crushed the French-Spanish fleet, giving Britain permanent naval supremacy. Napoleonic law spread across Europe in his wake. The disastrous invasion of Russia in 1812, with over 400,000 casualties, broke his aura of invincibility. The Sixth Coalition defeated Napoleon at Leipzig (1813), forced his abdication, and exiled him to Elba. He escaped for the 'Hundred Days' before final defeat at Waterloo in 1815.",
+      "consequences": "The Congress of Vienna (1814–15) redrew Europe's map, attempting to restore pre-revolutionary borders and establish a 'Concert of Europe' to maintain peace through collective diplomacy. Napoleon's exile to Saint Helena ended his reign permanently. His Napoleonic Code, however, remained — providing the legal foundation for civil law systems across Europe, Latin America, and beyond. France lost its dominant position but the ideals Napoleon spread — nationalism, legal equality, and meritocracy — could not be unspread.",
+      "globalImpact": "The Napoleonic Wars triggered independence movements across Latin America by destabilizing Spanish and Portuguese colonial control. They accelerated German and Italian nationalism by demonstrating both the power of unified action and the grievance of foreign domination. The Congress of Vienna's balance-of-power framework maintained relative European peace for nearly a century. The wars also industrialized warfare, with logistics and mass conscription becoming models for future conflicts."
+    },
+    "didYouKnow": "Napoleon was actually of average height for his era — around 5'7\". The 'short Napoleon' myth likely spread from British propaganda cartoonists, who exaggerated a misunderstanding: French inches were longer than British ones, and his nickname 'le petit caporal' (the little corporal) was an affectionate term, not a reference to his height.",
+    "quiz": [
+      {
+        "question": "Where was Napoleon finally defeated in 1815?",
+        "options": ["Austerlitz", "Leipzig", "Waterloo", "Moscow"],
+        "correctIndex": 2
+      },
+      {
+        "question": "What was the Continental System?",
+        "options": ["A military alliance of European nations", "Napoleon's blockade of British trade with Europe", "A new legal code for European nations", "A railway network across the continent"],
+        "correctIndex": 1
+      },
+      {
+        "question": "Which battle gave Britain permanent naval supremacy?",
+        "options": ["Battle of Trafalgar", "Battle of Nile", "Battle of Copenhagen", "Battle of Aboukir Bay"],
+        "correctIndex": 0
+      }
+    ],
+    "previousEventId": "french-revolution",
+    "nextEventId": "industrial-revolution"
+  },
+  {
+    "id": "industrial-revolution",
+    "title": "The Industrial Revolution",
+    "period": "1760 – 1840",
+    "location": "Britain, Western Europe",
+    "category": "Social & Economic",
+    "shortDescription": "A transformation from agrarian hand-production to machine manufacturing that permanently altered human civilization.",
+    "sections": {
+      "background": "Britain in the mid-18th century possessed a unique convergence of conditions that made it the cradle of industrial transformation: abundant coal and iron deposits, a strong financial system, colonial trade networks providing raw materials and markets, political stability following the Glorious Revolution, and a culture of practical tinkering and invention. Cottage industries producing textiles were being strained by demand, creating pressure for more efficient production methods. The Agricultural Revolution had freed up rural labor and generated capital for investment.",
+      "trigger": "James Watt's improved steam engine (1769), which dramatically increased efficiency over earlier designs, provided the motive power that made large-scale mechanized industry possible. Combined with Richard Arkwright's water frame and spinning jenny, textile production could be concentrated in factories. The opening of the first modern canal network lowered transport costs of bulky raw materials, making large-scale production economically viable for the first time.",
+      "majorEvents": "The first textile mills appeared in the 1770s in northern England, drawing thousands from rural areas to new industrial towns like Manchester and Birmingham. By the 1800s, steam power was applied to locomotion — George Stephenson's Rocket railway (1829) inaugurated the railway age. Iron production soared, enabling infrastructure construction at previously impossible scales. Child labor became widespread in mines and factories under brutal conditions. By 1840, Britain produced roughly half the world's iron and cotton cloth and was the undisputed 'workshop of the world.'",
+      "consequences": "Urbanization accelerated dramatically — Britain went from 20% urban to over 50% in a century. A new industrial working class formed, living in crowded, unsanitary conditions, eventually organizing into trade unions and pushing for labor reforms. The middle class expanded and gained political power. The Reform Act of 1832 began democratizing Parliament. Factory Acts gradually regulated child labor and working hours. Classical economics emerged to theorize the new capitalist system, while Karl Marx developed his critique of it.",
+      "globalImpact": "Britain's industrial dominance powered its imperial expansion across Africa, Asia, and the Americas, reshaping global trade flows in Britain's favor. Other nations — first Belgium and France, then Germany and the United States — industrialized in turn, triggering geopolitical shifts in global power. The Industrial Revolution permanently altered humanity's relationship with nature, beginning the fossil fuel age and setting the foundation for modern environmental challenges. It multiplied human productive capacity by orders of magnitude, lifting material living standards while creating new forms of inequality."
+    },
+    "didYouKnow": "The word 'Luddite' — now meaning someone opposed to technology — comes from Ned Ludd, a possibly mythical textile worker who reportedly smashed two stocking frames in a rage. Luddite protesters in the 1810s weren't actually anti-technology; they were skilled craftsmen fighting to protect their livelihoods and wages against factory owners using machines to undercut them.",
+    "quiz": [
+      {
+        "question": "Whose improved steam engine was central to powering the Industrial Revolution?",
+        "options": ["Richard Arkwright", "George Stephenson", "James Watt", "Isambard Kingdom Brunel"],
+        "correctIndex": 2
+      },
+      {
+        "question": "What percentage urban was Britain by the peak of the Industrial Revolution?",
+        "options": ["Over 30%", "Over 50%", "Over 70%", "Over 80%"],
+        "correctIndex": 1
+      },
+      {
+        "question": "What did Luddites originally protest against?",
+        "options": ["Child labor in factories", "The use of machines to undercut skilled workers' wages", "The expansion of railways", "The burning of coal in cities"],
+        "correctIndex": 1
+      }
+    ],
+    "previousEventId": "napoleonic-wars",
+    "nextEventId": "world-war-one"
+  },
+  {
+    "id": "magna-carta",
+    "title": "The Magna Carta",
+    "period": "1215",
+    "location": "Runnymede, England",
+    "category": "Legal History",
+    "shortDescription": "A royal charter forced upon King John that established for the first time that the king was subject to the rule of law.",
+    "sections": {
+      "background": "King John of England was an unpopular monarch who had lost vast territories in France to Philip II, exhausted the treasury with failed military campaigns, and quarreled bitterly with Pope Innocent III — resulting in England being placed under papal interdict. To fund his wars, John levied increasingly arbitrary taxes on the barons. Unlike his brother Richard I (the Lionheart), John lacked charisma and was seen as cruel and untrustworthy. By 1215, the barons' grievances had reached a breaking point after years of what they considered tyrannical governance.",
+      "trigger": "In May 1215, a group of rebel barons renounced their loyalty to John and captured London. Unable to militarily defeat them, John agreed to negotiate. On June 15, 1215, at Runnymede meadow beside the River Thames, King John affixed his seal to a document initially called the Articles of the Barons. It was reissued days later as the 'Magna Carta' — Latin for 'Great Charter.' Though John almost immediately sought papal annulment of the charter (granted within weeks), it was reissued multiple times and became a cornerstone of English law.",
+      "majorEvents": "The original charter contained 63 clauses addressing specific baronial grievances — limiting feudal payments, protecting merchant travel, standardizing weights and measures. Most crucially, Clauses 39 and 40 established that no free man could be imprisoned, exiled, or harmed except by the lawful judgment of his peers and the law of the land, and that justice could not be sold or denied. The establishment of a council of 25 barons to oversee the king's compliance was revolutionary — implying the king could be held accountable. Civil war broke out almost immediately after John repudiated it, only ending with his death in 1216.",
+      "consequences": "After John's death, his nine-year-old son Henry III reissued the Magna Carta as a bid for baronial support. It was confirmed over 30 times by successive monarchs. By the 13th century it had become foundational to English common law. In the 17th century, lawyers like Sir Edward Coke rediscovered and reinterpreted the Magna Carta as a defense of parliamentary rights against Stuart monarchs, giving it renewed constitutional significance far beyond its original intent.",
+      "globalImpact": "The Magna Carta's principles traveled to the American colonies via English common law. The phrase 'due process of law' (a later paraphrase of Clause 39) appears directly in the 5th and 14th Amendments to the U.S. Constitution. Its philosophy — that government is bound by law and the governed have rights that rulers cannot arbitrarily violate — became a cornerstone of liberal democratic theory and influenced constitutional documents worldwide from Australia to India. It remains one of the most symbolically important documents in the history of human rights."
+    },
+    "didYouKnow": "Of the original 63 clauses in the 1215 Magna Carta, only three remain on the statute books of England and Wales today. One protects the freedom of the Church, one protects the customs and liberties of the City of London, and the most famous — Clause 29 (renumbered from the original Clause 39) — guarantees due process of law.",
+    "quiz": [
+      {
+        "question": "Where was the Magna Carta sealed by King John?",
+        "options": ["Westminster", "Windsor Castle", "Runnymede", "Canterbury"],
+        "correctIndex": 2
+      },
+      {
+        "question": "What legal phrase from the Magna Carta appears in the U.S. Constitution's 5th and 14th Amendments?",
+        "options": ["Rule of law", "Habeas corpus", "Due process of law", "Presumption of innocence"],
+        "correctIndex": 2
+      },
+      {
+        "question": "How many of the original 63 Magna Carta clauses remain in English law today?",
+        "options": ["Ten", "Seven", "Five", "Three"],
+        "correctIndex": 3
+      }
+    ],
+    "previousEventId": null,
+    "nextEventId": "american-revolution"
+  },
+  {
+    "id": "world-war-one",
+    "title": "The First World War",
+    "period": "1914 – 1918",
+    "location": "Europe, Middle East, Africa, Global",
+    "category": "Military Conflict",
+    "shortDescription": "A catastrophic global conflict that dismantled empires, reshaped borders, and left 20 million dead.",
+    "sections": {
+      "background": "By 1914, Europe was a powder keg of intersecting tensions: rigid alliance systems had divided the continent into two armed camps (the Triple Alliance and Triple Entente), an arms race between Britain and Germany had created vast military arsenals, imperial competition in Africa and Asia stoked rivalry, and rising nationalism — particularly in the multi-ethnic Austro-Hungarian and Ottoman Empires — made political stability fragile. Decades of 'armed peace' had created military planning so rigid that mobilization, once begun, was almost impossible to stop.",
+      "trigger": "On June 28, 1914, Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, was assassinated in Sarajevo by Gavrilo Princip, a Bosnian-Serb nationalist affiliated with the Black Hand secret society. Austria-Hungary, backed by Germany's 'blank check' of support, issued an ultimatum to Serbia. When Serbia's response was deemed insufficient, Austria-Hungary declared war. Russia mobilized to support Serbia; Germany declared war on Russia and then France; Germany invaded Belgium; and Britain — bound by treaty to defend Belgian neutrality — declared war on Germany. Within six weeks, all the major European powers were at war.",
+      "majorEvents": "Germany's Schlieffen Plan to knock out France quickly failed at the Battle of the Marne (1914), leading to four years of trench warfare on the Western Front. The Battle of the Somme (1916) saw 57,000 British casualties on its first day alone. At Verdun, France and Germany each suffered roughly 300,000 dead in ten months of attritional combat. New technologies — machine guns, poison gas, tanks, aircraft, submarines — transformed warfare while generalship struggled to adapt. The United States entered in 1917. Revolution in Russia led to the Treaty of Brest-Litovsk, removing Russia from the war but freeing German forces for a final offensive that failed.",
+      "consequences": "The armistice of November 11, 1918 ended the fighting. The Treaty of Versailles imposed harsh terms on Germany: massive reparations, loss of territory, and the 'war guilt clause.' The Austro-Hungarian and Ottoman Empires were dismembered. New nations appeared across Central and Eastern Europe. The League of Nations — Woodrow Wilson's brainchild for collective security — was created but proved ineffective. Germany's humiliation created fertile ground for the rise of Adolf Hitler. The war killed approximately 20 million people and wounded 21 million more.",
+      "globalImpact": "World War I destroyed four empires (German, Austro-Hungarian, Russian, Ottoman) and redrew the world map. The Middle East's borders were redrawn by the Sykes-Picot Agreement with profound long-term consequences. The Balfour Declaration planted the seeds of the Israeli-Palestinian conflict. The war accelerated decolonization movements, as colonial subjects who fought for European powers began demanding rights. The Spanish flu pandemic, amplified by wartime movement, killed 50–100 million globally. Most significantly, WWI set conditions directly leading to World War II."
+    },
+    "didYouKnow": "The Christmas Truce of 1914 saw German and Allied soldiers spontaneously stop fighting along stretches of the Western Front on Christmas Day, exchanging food, singing carols, and even playing football in No Man's Land. Military commanders on both sides were furious. The unofficial truce was never repeated on the same scale.",
+    "quiz": [
+      {
+        "question": "Whose assassination triggered the chain of events leading to WWI?",
+        "options": ["Kaiser Wilhelm II", "Archduke Franz Ferdinand", "Tsar Nicholas II", "King Edward VII"],
+        "correctIndex": 1
+      },
+      {
+        "question": "What was the 'blank check' in the context of WWI?",
+        "options": ["Britain's promise to defend Belgium", "Germany's unconditional support for Austria-Hungary", "France's financial support for Russia", "America's war credit to the Allies"],
+        "correctIndex": 1
+      },
+      {
+        "question": "How many casualties did Britain suffer on the first day of the Battle of the Somme?",
+        "options": ["12,000", "32,000", "57,000", "78,000"],
+        "correctIndex": 2
+      }
+    ],
+    "previousEventId": "industrial-revolution",
+    "nextEventId": null
+  }
+]

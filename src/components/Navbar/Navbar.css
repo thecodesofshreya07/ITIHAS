@@ -78,3 +78,202 @@
 .signup-btn:hover {
   opacity: 0.9;
 }
+
+/* Hamburger — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1100;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #c9a14a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger open state */
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Large desktop (1280px+) ────────────────────── */
+@media (min-width: 1280px) {
+  .navbar {
+    padding: 0 60px;
+    height: 76px;
+  }
+
+  .nav-logo {
+    font-size: 40px;
+    margin-right: 22rem;
+  }
+
+  .nav-links {
+    gap: 28px;
+  }
+
+  .nav-links a {
+    font-size: 17px;
+  }
+}
+
+/* ── 2K / 4K (1536px+) ──────────────────────────── */
+@media (min-width: 1536px) {
+  .navbar {
+    padding: 0 80px;
+    height: 80px;
+  }
+
+  .nav-logo {
+    font-size: 44px;
+    margin-right: 26rem;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
+/* ── Tablet landscape (max 1024px) ──────────────── */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 24px;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 26px;
+    margin-right: 0;
+    letter-spacing: 2px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .login-btn,
+  .signup-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* ── Tablet portrait (max 768px) — show hamburger ─ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Nav drawer */
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: rgba(15, 11, 7, 0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201, 161, 74, 0.2);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .nav-links.open {
+    max-height: 400px;
+    padding: 12px 0 20px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 20px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(201, 161, 74, 0.08);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-auth {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(15, 11, 7, 0.97);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    /* Auth buttons appear below nav links */
+    border-bottom: 1px solid rgba(201, 161, 74, 0.15);
+    /* push below nav links — controlled via JS open class */
+    display: none;
+  }
+}
+
+/* ── Mobile (max 480px) ─────────────────────────── */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  /* Adjust drawer top for shorter navbar */
+  .nav-links {
+    top: 60px;
+  }
+}
+
+/* ── Small mobile (max 380px) ───────────────────── */
+@media (max-width: 380px) {
+  .nav-logo {
+    font-size: 16px;
+  }
+}

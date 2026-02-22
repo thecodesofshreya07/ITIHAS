@@ -5,6 +5,7 @@
   display: grid;
   place-items: center;
   z-index: 1000;
+  padding: 16px;
 }
 
 .modal {
@@ -17,14 +18,8 @@
 }
 
 @keyframes scaleIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
 }
 
 .auth-box input {
@@ -34,6 +29,7 @@
   background: transparent;
   border: 1px solid #c4a24f;
   color: white;
+  box-sizing: border-box;
 }
 
 .auth-box button {
@@ -43,4 +39,60 @@
   border: none;
   cursor: pointer;
   font-weight: bold;
+  box-sizing: border-box;
+}
+
+/* ── Large desktop (1280px+) ────────────────────── */
+@media (min-width: 1280px) {
+  .modal {
+    width: 380px;
+    padding: 2.5rem;
+  }
+}
+
+/* ── 2K / 4K (1536px+) ──────────────────────────── */
+@media (min-width: 1536px) {
+  .modal {
+    width: 420px;
+    padding: 3rem;
+    border-radius: 16px;
+  }
+
+  .auth-box input {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .auth-box button {
+    padding: 0.85rem;
+    font-size: 1rem;
+  }
+}
+
+/* ── Mobile (max 480px) ─────────────────────────── */
+@media (max-width: 480px) {
+  .modal {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+}
+
+/* ── Small mobile (max 380px) ───────────────────── */
+@media (max-width: 380px) {
+  .modal {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .auth-box input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .auth-box button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
 }

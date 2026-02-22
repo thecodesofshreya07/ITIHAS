@@ -10,11 +10,12 @@
   text-align: center;
   color: #2a2218;
 }
+
 .landing-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 8rem;
   letter-spacing: 6px;
-  color:rgba(10, 8, 5, 0.95);
+  color: rgba(10, 8, 5, 0.95);
   text-shadow: 0 0 20px rgba(230, 201, 140, 0.3);
 }
 
@@ -30,13 +31,11 @@
   margin-top: 60px;
   padding: 14px 40px;
   font-size: 1.2rem;
-
   font-family: 'Cinzel', serif;
   background: transparent;
   border: 2px solid #5c4a3a;
   color: #5c4a3a;
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
@@ -44,4 +43,128 @@
   background: #3f321e;
   color: white;
   transform: scale(1.08);
+}
+
+/* ── Large desktop (1280px+) ────────────────────── */
+@media (min-width: 1280px) {
+  .landing-title {
+    font-size: 9rem;
+    letter-spacing: 8px;
+  }
+
+  .landing-tagline {
+    font-size: 2.2rem;
+  }
+
+  .start-btn {
+    padding: 16px 48px;
+    font-size: 1.3rem;
+    margin-top: 70px;
+  }
+}
+
+/* ── 2K / 4K (1536px+) ──────────────────────────── */
+@media (min-width: 1536px) {
+  .landing-title {
+    font-size: 11rem;
+    letter-spacing: 10px;
+  }
+
+  .landing-tagline {
+    font-size: 2.5rem;
+    margin-top: 20px;
+  }
+
+  .start-btn {
+    padding: 18px 56px;
+    font-size: 1.4rem;
+    margin-top: 80px;
+  }
+}
+
+/* ── Tablet landscape (max 1024px) ──────────────── */
+@media (max-width: 1024px) {
+  .landing-title {
+    font-size: 6rem;
+    letter-spacing: 4px;
+  }
+
+  .landing-tagline {
+    font-size: 1.6rem;
+  }
+
+  .start-btn {
+    margin-top: 48px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ── Tablet portrait (max 768px) ────────────────── */
+@media (max-width: 768px) {
+  .landing {
+    background:
+      linear-gradient(rgba(10, 8, 5, 0.35), rgba(10, 8, 5, 0.35)),
+      url("/src/assets/bgphone.jpeg") no-repeat center center;
+    background-size: cover;
+  }
+
+  .landing-title {
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+  }
+
+  .landing-tagline {
+    font-size: 1.4rem;
+    margin-top: 12px;
+    padding: 0 20px;
+  }
+
+  .start-btn {
+    margin-top: 40px;
+    padding: 12px 32px;
+    font-size: 1rem;
+  }
+}
+
+/* ── Mobile (max 600px) — bgphone.jpeg ──────────── */
+@media (max-width: 600px) {
+  .landing {
+    background:
+      linear-gradient(rgba(10, 8, 5, 0.35), rgba(10, 8, 5, 0.35)),
+      url("/src/assets/bgphone.jpeg") no-repeat center center;
+    background-size: cover;
+  }
+
+  .landing-title {
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+  }
+
+  .landing-tagline {
+    font-size: 1.2rem;
+    padding: 0 16px;
+  }
+
+  .start-btn {
+    margin-top: 36px;
+    padding: 12px 28px;
+  }
+}
+
+/* ── Small mobile (max 380px) ───────────────────── */
+@media (max-width: 380px) {
+  .landing-title {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+  }
+
+  .landing-tagline {
+    font-size: 1rem;
+  }
+
+  .start-btn {
+    margin-top: 28px;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
 }
