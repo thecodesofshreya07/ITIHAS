@@ -14,11 +14,11 @@ const CIVILIZATIONS = [
       "One of the world’s earliest urban civilizations, flourishing along the Indus River and its tributaries in what is now Pakistan and northwest India. The Indus people built carefully planned brick cities like Harappa and Mohenjo-daro, with straight streets, multi‑storey houses, public granaries, and some of the most sophisticated drainage and sanitation systems of the ancient world. Their standardized weights, seals, and craft production suggest a highly organized economy, even though their script remains undeciphered.",
     images: [
       {
-        src: "src/assets/indus1.jpg",
+        src: "/images/indus1.jpg",
         alt: "Approximate extent of the Indus Valley Civilization",
       },
       {
-        src: "src/assets/indus2.jpg",
+        src: "/images/indus2.jpg",
         alt: "Ruins of Mohenjo-daro, an Indus city",
       },
     ],
@@ -35,7 +35,7 @@ const CIVILIZATIONS = [
       "Ancient Egypt rose along the fertile banks of the Nile River, where predictable floods allowed farmers to grow surplus crops that sustained a powerful state. Pharaohs ruled as divine kings, overseeing the construction of monumental pyramids, obelisks, and temples decorated with vivid wall paintings and hieroglyphic inscriptions. From the Old Kingdom to the era of Cleopatra, Egyptian culture developed complex religious beliefs about the afterlife, advanced knowledge of mathematics and engineering, and a distinctive artistic style that remained remarkably stable over millennia.",
     images: [
       {
-        src: "src/assets/egypt1.jpg",
+        src: "/images/egypt1.jpg",
         alt: "Nile Valley and surrounding regions in Egypt",
       },
       {
@@ -56,11 +56,11 @@ const CIVILIZATIONS = [
       "Mesopotamia, literally “the land between the rivers”, lay between the Tigris and Euphrates in modern Iraq and Syria. Here, city‑states like Uruk, Ur, and later Babylon pioneered early forms of writing (cuneiform), monumental temple complexes called ziggurats, and some of the first known legal codes, including the famous Code of Hammurabi. Over many centuries, Sumerians, Akkadians, Babylonians, and Assyrians built and rebuilt empires in this region, leaving a legacy of myths, mathematics, and astronomy that influenced later civilizations across the Near East and beyond.",
     images: [
       {
-        src: "src/assets/mes1.jpg",
+        src: "/images/mes1.jpg",
         alt: "Map showing the core cities of ancient Mesopotamia",
       },
       {
-        src: "src/assets/mes2.jpg",
+        src: "/images/mes2.jpg",
         alt: "Reconstruction of the Ishtar Gate of Babylon",
       },
     ],
