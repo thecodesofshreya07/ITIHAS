@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { isLoggedIn } from "../utils/auth";
+import { isLoggedIn } from "../utils/Auth";
 import "./Landing.css";
 
 export default function Landing() {
