@@ -4,7 +4,6 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
