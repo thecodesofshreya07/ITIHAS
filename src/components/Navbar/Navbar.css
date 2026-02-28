@@ -16,6 +16,12 @@
 }
 
 .nav-logo {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav-logo {
   font-size: 35px;
   margin-right: 20rem;
   letter-spacing: 3px;

@@ -1,3 +1,9 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+html, body {
+  background-color: white; /* or your theme color */
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +18,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 a {
   font-weight: 500;

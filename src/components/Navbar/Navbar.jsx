@@ -10,7 +10,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       {/* Logo */}
-      <div className="nav-logo">ITIHAAS</div>
+      <Link to="/pages/Home" className="nav-logo" onClick={closeMenu}>
+        ITIHAAS
+      </Link>
 
       {/* Hamburger */}
       <button
@@ -26,10 +28,11 @@ export default function Navbar() {
 
       {/* Nav Links */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <li><Link to="/Home" onClick={closeMenu}>Home</Link></li>
         <li><Link to="/timeline" onClick={closeMenu}>Timeline</Link></li>
-        <li><Link to="/maps"     onClick={closeMenu}>Maps</Link></li>
-        <li><Link to="/stories"  onClick={closeMenu}>Stories</Link></li>
-        <li><Link to="/quiz"     onClick={closeMenu}>Quiz</Link></li>
+        <li><Link to="/maps" onClick={closeMenu}>Maps</Link></li>
+        <li><Link to="/stories" onClick={closeMenu}>Stories</Link></li>
+        <li><Link to="/quiz" onClick={closeMenu}>Quiz</Link></li>
       </ul>
 
       {/* Auth Buttons */}
