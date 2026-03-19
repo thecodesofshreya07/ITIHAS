@@ -1,17 +1,11 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import storiesData from "./stories.json";
+import SearchBar from "./SearchBar";
+import FilterBar from "./FilterBar";
 import "./Stories.css";
 
 // ── Icon helpers ──────────────────────────────────────────────
-const SearchIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8" />
-    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-  </svg>
-);
-
 const ClockIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -35,27 +29,52 @@ const ArrowIcon = () => (
   </svg>
 );
 
+// ── Filtering Logic ────────────────────────────────────────────
+/**
+ * Filters the list of stories based on search query, era, and region.
+ * Implements case-insensitive search on title and description.
+ */
+const getFilteredStories = (data, search, era, region) => {
+  const query = search.toLowerCase().trim();
+  
+  return data.filter((story) => {
+    // Search condition: matches title OR shortDescription
+    const matchesSearch = !query || 
+      story.title.toLowerCase().includes(query) || 
+      story.shortDescription.toLowerCase().includes(query);
+
+    // Filter condition: Era
+    const matchesEra = era === "All" || story.era === era;
+
+    // Filter condition: Region
+    const matchesRegion = region === "All" || story.region === region;
+
+    return matchesSearch && matchesEra && matchesRegion;
+  });
+};
+
 // ── Main Component ────────────────────────────────────────────
 export default function StoriesList() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedEra, setSelectedEra] = useState("All");
+  const [selectedRegion, setSelectedRegion] = useState("All");
 
-  const categories = useMemo(() => {
-    const cats = [...new Set(storiesData.map((s) => s.category))].sort();
-    return ["All", ...cats];
+  // Derive eras and regions from data for dropdowns
+  const eras = useMemo(() => {
+    const uniqueEras = [...new Set(storiesData.map((s) => s.era))].filter(Boolean).sort();
+    return ["All", ...uniqueEras];
   }, []);
 
+  const regions = useMemo(() => {
+    const uniqueRegions = [...new Set(storiesData.map((s) => s.region))].filter(Boolean).sort();
+    return ["All", ...uniqueRegions];
+  }, []);
+
+  // Compute filtered stories
   const filteredStories = useMemo(() => {
-    return storiesData.filter((story) => {
-      const matchesSearch = story.title
-        .toLowerCase()
-        .includes(search.toLowerCase());
-      const matchesCategory =
-        selectedCategory === "All" || story.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [search, selectedCategory]);
+    return getFilteredStories(storiesData, search, selectedEra, selectedRegion);
+  }, [search, selectedEra, selectedRegion]);
 
   const handleReadMore = (id) => navigate(`/stories/${id}`);
 
@@ -68,7 +87,6 @@ export default function StoriesList() {
 
         {/* ── Page Header ── */}
         <header className="stories-page-header">
-          {/* <p className="eyebrow">Historical Time Machine</p> */}
           <h1>The Archive of Ages</h1>
           <p>
             Dispatches from the turning points that forged our world — wars,
@@ -78,43 +96,49 @@ export default function StoriesList() {
 
         {/* ── Controls ── */}
         <div className="controls-bar">
-          <div className="search-wrapper">
-            <SearchIcon />
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search by title…"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              aria-label="Search stories"
-            />
-          </div>
-          <select
-            className="filter-select"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            aria-label="Filter by category"
-          >
-            {categories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat === "All" ? "All Categories" : cat}
-              </option>
-            ))}
-          </select>
+          <SearchBar 
+            value={search} 
+            onChange={setSearch} 
+            placeholder="Search historical events..."
+          />
+          <FilterBar 
+            selectedEra={selectedEra}
+            onEraChange={setSelectedEra}
+            eras={eras}
+            selectedRegion={selectedRegion}
+            onRegionChange={setSelectedRegion}
+            regions={regions}
+          />
         </div>
 
         <p className="results-count">
           {filteredStories.length === storiesData.length
             ? `${storiesData.length} stories in the archive`
-            : `${filteredStories.length} of ${storiesData.length} stories`}
+            : `${filteredStories.length} of ${storiesData.length} stories matched`}
         </p>
 
         {/* ── Cards Grid ── */}
         <div className="cards-grid">
           {filteredStories.length === 0 ? (
-            <p className="no-results">
-              No stories match your search. Try a different term or category.
-            </p>
+            <div className="no-results" style={{ gridColumn: "1 / -1", textAlign: "center", padding: "80px 20px" }}>
+              <p style={{ fontSize: "24px", color: "var(--gold)", marginBottom: "12px" }}>🏛️ No match found</p>
+              <p>We couldn't find any stories matching your criteria. Try adjusting your search or filters.</p>
+              <button 
+                onClick={() => { setSearch(""); setSelectedEra("All"); setSelectedRegion("All"); }}
+                style={{
+                  background: "none",
+                  border: "1px solid var(--gold-dim)",
+                  color: "var(--gold)",
+                  padding: "8px 16px",
+                  marginTop: "24px",
+                  cursor: "pointer",
+                  fontFamily: "'Cinzel', serif",
+                  borderRadius: "4px"
+                }}
+              >
+                Clear All Filters
+              </button>
+            </div>
           ) : (
             filteredStories.map((story) => (
               <article
@@ -122,7 +146,10 @@ export default function StoriesList() {
                 className="story-card"
                 onClick={() => handleReadMore(story.id)}
               >
-                <span className="card-category-tag">{story.category}</span>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
+                  <span className="card-category-tag">{story.era}</span>
+                  <span style={{ fontSize: "10px", color: "var(--gold-dim)", textTransform: "uppercase", letterSpacing: "0.1em" }}>{story.region}</span>
+                </div>
 
                 <h2 className="card-title">{story.title}</h2>
 
@@ -155,3 +182,4 @@ export default function StoriesList() {
     </div>
   );
 }
+
