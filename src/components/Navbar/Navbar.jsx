@@ -46,9 +46,31 @@ export default function Navbar() {
         <li><Link to="/stories" onClick={closeMenu}>Stories</Link></li>
         <li><Link to="/quiz" onClick={closeMenu}>Quiz</Link></li>
         {user && <li><Link to="/profile" onClick={closeMenu}>Profile</Link></li>}
+        
+        {/* Mobile-only auth section */}
+        <li className="mobile-auth-item">
+          {user ? (
+            <button onClick={handleLogout} className="logout-btn">Logout</button>
+          ) : (
+            <div className="mobile-auth-btns">
+              <button 
+                onClick={() => { setAuthMode('login'); closeMenu(); }} 
+                className="login-btn"
+              >
+                Login
+              </button>
+              <button 
+                onClick={() => { setAuthMode('signup'); closeMenu(); }} 
+                className="signup-btn"
+              >
+                Sign Up
+              </button>
+            </div>
+          )}
+        </li>
       </ul>
 
-      {/* Auth Buttons */}
+      {/* Desktop Auth Buttons */}
       <div className="nav-auth">
         {user ? (
           <div className="user-profile">

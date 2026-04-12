@@ -73,6 +73,7 @@
   color: #f5e6c8;
   font-size: 0.9rem;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .logout-btn {
@@ -112,6 +113,10 @@
 
 .signup-btn:hover {
   opacity: 0.9;
+}
+
+.mobile-auth-item {
+  display: none; /* Hidden on desktop */
 }
 
 /* Hamburger — hidden on desktop */
@@ -248,8 +253,8 @@
   }
 
   .nav-links.open {
-    max-height: 400px;
-    padding: 12px 0 20px;
+    max-height: 500px;
+    padding: 12px 0 30px;
   }
 
   .nav-links li {
@@ -269,22 +274,24 @@
   }
 
   .nav-auth {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    flex-direction: row;
+    display: none; /* Hide desktop auth section */
+  }
+
+  .mobile-auth-item {
+    display: block;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .mobile-auth-btns {
+    display: flex;
     justify-content: center;
-    gap: 12px;
-    background: rgba(15, 11, 7, 0.97);
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-    /* Auth buttons appear below nav links */
-    border-bottom: 1px solid rgba(201, 161, 74, 0.15);
-    /* push below nav links — controlled via JS open class */
-    display: none;
+    gap: 15px;
+  }
+
+  .mobile-auth-btns button {
+    flex: 1;
+    max-width: 140px;
   }
 }
 
