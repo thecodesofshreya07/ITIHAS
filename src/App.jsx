@@ -6,6 +6,7 @@ import MapsPage from "./pages/MapsPage";
 import StoriesPage from "./pages/StoriesPage";
 import QuizPage from "./pages/QuizPage";
 import StoryDetail from "./components/Stories/StoryDetail";
+import ProfilePage from "./pages/ProfilePage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/stories" element={<StoriesPage />} />
       <Route path="/stories/:id" element={<StoryDetail />} />
       <Route path="/quiz" element={<QuizPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

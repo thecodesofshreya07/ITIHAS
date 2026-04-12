@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useAuth } from "../../context/AuthContext";
 import "./HistoryQuiz.css";
 
 const HistoryQuiz = () => {
@@ -499,6 +500,8 @@ const HistoryQuiz = () => {
     }
   };
 
+  const { user, updateProgress } = useAuth();
+
   const handleNext = () => {
     if (currentQuestion < quizData.questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -506,6 +509,14 @@ const HistoryQuiz = () => {
       setIsAnswered(false);
     } else {
       setShowResult(true);
+      if (user) {
+        updateProgress({
+          title: quizData.title,
+          score,
+          total: quizData.questions.length,
+          time: timeElapsed
+        });
+      }
     }
   };
 

@@ -1,15 +1,28 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import AuthModal from "../Auth/AuthModal";
+import Login from "../Auth/Login";
+import Signup from "../Auth/Signup";
 import "./Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authMode, setAuthMode] = useState(null); // 'login' | 'signup' | null
+  const { user, logout } = useAuth();
+
   const closeMenu = () => setMenuOpen(false);
+  const closeAuth = () => setAuthMode(null);
+
+  const handleLogout = () => {
+    logout();
+    closeMenu();
+  };
 
   return (
     <nav className="navbar">
       {/* Logo */}
-      <Link to="/pages/Home" className="nav-logo" onClick={closeMenu}>
+      <Link to="/home" className="nav-logo" onClick={closeMenu}>
         ITIHAAS
       </Link>
 
@@ -27,18 +40,40 @@ export default function Navbar() {
 
       {/* Nav Links */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li><Link to="/Home" onClick={closeMenu}>Home</Link></li>
+        <li><Link to="/home" onClick={closeMenu}>Home</Link></li>
         <li><Link to="/timeline" onClick={closeMenu}>Timeline</Link></li>
         <li><Link to="/maps" onClick={closeMenu}>Maps</Link></li>
         <li><Link to="/stories" onClick={closeMenu}>Stories</Link></li>
         <li><Link to="/quiz" onClick={closeMenu}>Quiz</Link></li>
+        {user && <li><Link to="/profile" onClick={closeMenu}>Profile</Link></li>}
       </ul>
 
       {/* Auth Buttons */}
       <div className="nav-auth">
-        <button className="login-btn">Login</button>
-        <button className="signup-btn">Sign Up</button>
+        {user ? (
+          <div className="user-profile">
+            <Link to="/profile" className="user-name">Hello, {user.name.split(' ')[0]}</Link>
+            <button onClick={handleLogout} className="logout-btn">Logout</button>
+          </div>
+        ) : (
+          <>
+            <button onClick={() => setAuthMode('login')} className="login-btn">Login</button>
+            <button onClick={() => setAuthMode('signup')} className="signup-btn">Sign Up</button>
+          </>
+        )}
       </div>
+
+      {/* Auth Modals */}
+      {authMode === 'login' && (
+        <AuthModal close={closeAuth}>
+          <Login close={closeAuth} switchToSignup={() => setAuthMode('signup')} />
+        </AuthModal>
+      )}
+      {authMode === 'signup' && (
+        <AuthModal close={closeAuth}>
+          <Signup close={closeAuth} switchToLogin={() => setAuthMode('login')} />
+        </AuthModal>
+      )}
     </nav>
   );
 }

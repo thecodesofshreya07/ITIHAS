@@ -42,6 +42,34 @@
   box-sizing: border-box;
 }
 
+.auth-error {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff4d4d;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a0a0a0;
+}
+
+.auth-switch span {
+  color: #c4a24f;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.auth-switch span:hover {
+  color: #f5deb3;
+}
+
 /* ── Large desktop (1280px+) ────────────────────── */
 @media (min-width: 1280px) {
   .modal {
