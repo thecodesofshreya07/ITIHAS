@@ -13,7 +13,7 @@ function Timeline() {
 
   useEffect(() => {
     // Fetch events from backend
-    fetch('http://localhost:5000/api/events')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/events`)
       .then(res => res.json())
       .then(data => {
         setHistoryEras(data);
