@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-
 const authRoutes = require('./routes/auth');
 const eventRoutes = require('./routes/events');
 
@@ -12,8 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/itihas';
+const PORT = process.env.PORT || 5000;
+const MONGODB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/itihas';
 
 mongoose.connect(MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
