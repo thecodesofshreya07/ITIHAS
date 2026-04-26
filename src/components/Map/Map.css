@@ -1,7 +1,18 @@
+/* ── Global containment fix ──────────────────────── */
+.map-section *,
+.map-section *::before,
+.map-section *::after {
+  box-sizing: border-box;
+}
+
 .map-section {
   padding: 2rem 1.5rem 3rem;
   color: #f5e6c8;
   background: transparent;
+  /* Prevent ANY child from ever escaping sideways */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .map-title {
@@ -9,6 +20,7 @@
   font-weight: 700;
   text-align: center;
   margin: 0 0 0.5rem;
+  word-break: break-word;
 }
 
 .map-subtitle {
@@ -17,24 +29,27 @@
   margin: 0 auto 2rem;
   font-size: 0.95rem;
   color: rgba(245, 230, 200, 0.8);
+  word-break: break-word;
 }
 
 .map-layout {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  width: 100%;
+  min-width: 0;
+  /* flex children can shrink below their content size */
 }
 
+/* ── Map viewport ────────────────────────────────── */
 .map-container {
   position: relative;
   border-radius: 1.25rem;
   overflow: hidden;
   box-shadow: 0 0 40px rgba(201, 161, 74, 0.15);
-  background: radial-gradient(
-    circle at top left,
-    rgba(20, 16, 10, 0.98),
-    rgba(10, 8, 5, 0.98)
-  );
+  background: radial-gradient(circle at top left,
+      rgba(20, 16, 10, 0.98),
+      rgba(10, 8, 5, 0.98));
   width: 100%;
   min-height: 360px;
 }
@@ -87,6 +102,7 @@
   letter-spacing: 0.08em;
 }
 
+/* ── Markers ─────────────────────────────────────── */
 .map-marker {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -102,11 +118,9 @@
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  background: radial-gradient(
-    circle,
-    rgba(201, 161, 74, 0.75),
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(201, 161, 74, 0.75),
+      transparent 70%);
   opacity: 0.7;
   transform-origin: center;
   animation: map-pulse 1.8s ease-out infinite;
@@ -129,6 +143,7 @@
   box-shadow: 0 0 0 4px rgba(245, 230, 200, 0.85);
 }
 
+/* ── Info card ───────────────────────────────────── */
 .map-card {
   border-radius: 1.25rem;
   background: rgba(20, 16, 10, 0.95);
@@ -140,6 +155,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  /* THE KEY FIXES — contain all text inside the card */
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .map-card-header {
@@ -147,12 +167,17 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
+  min-width: 0;
+  /* allow header children to shrink */
 }
 
 .map-card-title {
   margin: 0 0 0.2rem;
   font-size: 1.3rem;
   font-weight: 700;
+  /* Wrap long civilization names properly */
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .map-card-era {
@@ -173,13 +198,20 @@
   font-size: 0.9rem;
   line-height: 1.7;
   color: #f5e6c8;
+  /* Prevent long words / sentences from overflowing the card */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  /* Undo any stray text-align:center from parent pages */
+  text-align: left;
 }
 
+/* ── Gallery ─────────────────────────────────────── */
 .map-card-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.75rem;
   margin-top: 0.3rem;
+  width: 100%;
 }
 
 .map-card-image-wrapper {
@@ -188,6 +220,8 @@
   overflow: hidden;
   border: 1px solid rgba(201, 161, 74, 0.45);
   background: #0a0805;
+  /* Stop images forcing their natural width */
+  min-width: 0;
 }
 
 .map-card-image {
@@ -207,11 +241,10 @@
   padding: 0.35rem 0.55rem 0.45rem;
   font-size: 0.75rem;
   color: #f5e6c8;
-  background: linear-gradient(
-    to right,
-    rgba(10, 8, 5, 0.98),
-    rgba(20, 16, 10, 0.98)
-  );
+  background: linear-gradient(to right,
+      rgba(10, 8, 5, 0.98),
+      rgba(20, 16, 10, 0.98));
+  word-break: break-word;
 }
 
 .map-card-footer {
@@ -230,12 +263,14 @@
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid rgba(201, 161, 74, 0.18);
+  min-width: 0;
 }
 
 .map-detail-row {
   display: flex;
   flex-direction: column;
   gap: 3px;
+  min-width: 0;
 }
 
 .map-detail-label {
@@ -253,6 +288,8 @@
   color: #f5e6c8;
   line-height: 1.5;
   margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ── Key Facts ───────────────────────────────────── */
@@ -263,6 +300,7 @@
   border: 1px solid rgba(201, 161, 74, 0.18);
   border-left: 3px solid rgba(201, 161, 74, 0.6);
   border-radius: 6px;
+  min-width: 0;
 }
 
 .map-key-facts-label {
@@ -297,23 +335,24 @@
   font-size: 13px;
   line-height: 1.6;
   color: rgba(245, 230, 200, 0.82);
+  word-break: break-word;
 }
 
-
+/* ── Slider ──────────────────────────────────────── */
 .map-slider {
   margin-top: 1.75rem;
   padding: 1.2rem 1.4rem 0.4rem;
   border-radius: 1rem;
   border: 1px solid rgba(201, 161, 74, 0.2);
-  background: radial-gradient(
-    circle at top,
-    rgba(20, 16, 10, 0.98),
-    rgba(10, 8, 5, 0.98)
-  );
+  background: radial-gradient(circle at top,
+      rgba(20, 16, 10, 0.98),
+      rgba(10, 8, 5, 0.98));
   box-shadow: 0 0 32px rgba(201, 161, 74, 0.12);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  width: 100%;
+  overflow: hidden;
 }
 
 .map-slider-header {
@@ -322,6 +361,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   flex-wrap: wrap;
+  min-width: 0;
 }
 
 .map-slider-button {
@@ -333,6 +373,7 @@
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .map-slider-button:hover {
@@ -406,6 +447,8 @@
   justify-content: space-between;
   gap: 0.35rem;
   margin-bottom: 0.1rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .map-slider-tick {
@@ -426,6 +469,7 @@
   height: 6px;
   border-radius: 50%;
   background: rgba(201, 161, 74, 0.5);
+  flex-shrink: 0;
 }
 
 .map-slider-tick-text {
@@ -435,6 +479,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .map-slider-tick--active .map-slider-tick-dot {
@@ -446,10 +491,25 @@
 }
 
 @keyframes map-pulse {
-  0%   { transform: scale(0.6); opacity: 0.8; }
-  70%  { transform: scale(1.1); opacity: 0; }
-  100% { transform: scale(1.1); opacity: 0; }
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
 }
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════════════════════════════════ */
 
 /* ── Large desktop (1280px+) ────────────────────── */
 @media (min-width: 1280px) {
@@ -568,6 +628,11 @@
     gap: 0.4rem;
   }
 
+  .map-card-description {
+    font-size: 0.88rem;
+    text-align: left;
+  }
+
   .map-card-gallery {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
@@ -583,12 +648,21 @@
   .map-slider-tick-text {
     font-size: 0.65rem;
   }
+
+  .map-detail-value {
+    font-size: 12.5px;
+  }
+
+  .map-key-facts-list li {
+    font-size: 12.5px;
+  }
 }
 
 /* ── Mobile (max 600px) ─────────────────────────── */
 @media (max-width: 600px) {
   .map-section {
-    padding-inline: 0.75rem;
+    padding: 1rem 0.75rem 2rem;
+    /* tighter side padding */
   }
 
   .map-title {
@@ -600,44 +674,106 @@
     border-radius: 0.75rem;
   }
 
+  /* Card: full-width, all text left-aligned, nothing escaping */
   .map-card {
     padding: 1rem 0.85rem 0.85rem;
     border-radius: 0.75rem;
+    width: 100%;
   }
 
+  .map-card-title {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .map-card-description {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  /* Stack gallery to a single column on narrow phones */
   .map-card-gallery {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .map-card-image {
-    height: 140px;
+    height: 160px;
+    /* taller single image looks better than two narrow ones */
   }
 
+  /* Slider: stack prev/next buttons vertically */
   .map-slider-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 0.5rem;
   }
 
   .map-slider-button {
-    align-self: flex-end;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .map-slider-current {
+    text-align: center;
+  }
+
+  /* Detail rows: slightly smaller text */
+  .map-detail-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+  }
+
+  .map-detail-value {
+    font-size: 12px;
+  }
+
+  .map-key-facts {
+    padding: 10px 12px;
+  }
+
+  .map-key-facts-list {
+    padding-left: 14px;
+  }
+
+  .map-key-facts-list li {
+    font-size: 12px;
   }
 }
 
 /* ── Small mobile (max 380px) ───────────────────── */
 @media (max-width: 380px) {
+  .map-section {
+    padding: 0.75rem 0.6rem 1.5rem;
+  }
+
   .map-title {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .map-card-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .map-card-description {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
 
+  /* Hide tick labels — not enough room */
   .map-slider-tick-text {
     display: none;
+  }
+
+  .map-card-image {
+    height: 130px;
+  }
+
+  .map-detail-value {
+    font-size: 11.5px;
+  }
+
+  .map-key-facts-list li {
+    font-size: 11.5px;
   }
 }
