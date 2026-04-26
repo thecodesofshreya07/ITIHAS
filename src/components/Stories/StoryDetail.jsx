@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import storiesData from "./stories.json";
 import { isBookmarked, toggleBookmark } from "../../utils/bookmarkUtils";
 import "./Stories.css";
@@ -59,7 +60,7 @@ const OPTION_LETTERS = ["A", "B", "C", "D"];
 function QuizQuestion({ item, index }) {
   const [selected, setSelected] = useState(null);
   const answered = selected !== null;
-  const isCorrect = selected === item.correctIndex;
+  const isCorrect = selected !== null && item.options[selected] === item.correctAnswer;
 
   const handleSelect = (optIdx) => {
     if (!answered) setSelected(optIdx);
@@ -76,7 +77,7 @@ function QuizQuestion({ item, index }) {
           if (answered) {
             if (optIdx === selected && isCorrect) cls += " correct";
             else if (optIdx === selected && !isCorrect) cls += " wrong";
-            else if (optIdx === item.correctIndex) cls += " revealed-correct";
+            else if (opt === item.correctAnswer) cls += " revealed-correct";
             else cls += " answered";
           }
           return (
@@ -98,7 +99,7 @@ function QuizQuestion({ item, index }) {
         <div className={`quiz-feedback ${isCorrect ? "correct-fb" : "wrong-fb"}`}>
           {isCorrect
             ? "✓ Correct! Well done."
-            : `✗ Not quite. The correct answer is: "${item.options[item.correctIndex]}"`}
+            : `✗ Not quite. The correct answer is: "${item.correctAnswer}"`}
         </div>
       )}
     </div>
@@ -120,6 +121,18 @@ export default function StoryDetail() {
 
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [tick, setTick] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [score, setScore] = useState(0);
+  const { user, updateProgress } = useAuth();
+
+  const handleSubmitQuiz = () => {
+    const calculatedScore = story.questions.filter(
+      (q, i) => selectedAnswers[i] === q.correctAnswer
+    ).length;
+    setScore(calculatedScore);
+    setIsSubmitted(true);
+  };
 
   const toggleSpeech = (text) => {
     if (isSpeaking) {
@@ -272,24 +285,79 @@ export default function StoryDetail() {
         </nav>
 
         {/* ── Quiz ── */}
-        {story.quiz && story.quiz.length > 0 && (
-          <section className="quiz-section" aria-label="Knowledge quiz">
+        {story.questions && story.questions.length > 0 && (
+          <section className="quiz-section" aria-label="Knowledge quiz" style={{ marginTop: '40px' }}>
             <div className="quiz-header">
-              <span className="quiz-label">Test Your Knowledge</span>
+              <span className="quiz-label" style={{ color: 'var(--gold)' }}>Test Your Knowledge</span>
             </div>
             <h3 style={{
               fontFamily: "Cinzel, serif",
-              fontSize: "20px",
+              fontSize: "24px",
               color: "var(--text)",
-              marginBottom: "28px",
+              marginBottom: "30px",
+              borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+              paddingBottom: "10px"
             }}>
               {story.title} — Quick Quiz
             </h3>
             <div className="quiz-questions">
-              {story.quiz.map((item, idx) => (
-                <QuizQuestion key={idx} item={item} index={idx} />
+              {story.questions.map((q, index) => (
+                <div key={index} className="quiz-card" style={{ marginBottom: '20px', padding: '20px', backgroundColor: 'rgba(255, 255, 255, 0.05)', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                  <h3 style={{ marginBottom: '15px', fontSize: '18px', lineHeight: '1.4' }}>Q{index + 1}. {q.question}</h3>
+                  {q.options.map((option, i) => (
+                    <div 
+                      key={i} 
+                      className="option"
+                      onClick={() => !isSubmitted && setSelectedAnswers({ ...selectedAnswers, [index]: option })}
+                      style={{
+                        padding: '12px 16px',
+                        margin: '10px 0',
+                        cursor: isSubmitted ? 'default' : 'pointer',
+                        borderRadius: '6px',
+                        border: selectedAnswers[index] === option ? '1px solid var(--gold)' : '1px solid rgba(255, 255, 255, 0.2)',
+                        backgroundColor: selectedAnswers[index] === option 
+                          ? "rgba(212, 175, 55, 0.15)" // subtle gold theme highlight
+                          : "transparent",
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      <strong>{String.fromCharCode(65 + i)}.</strong> {option}
+                    </div>
+                  ))}
+                </div>
               ))}
             </div>
+            
+            {!isSubmitted ? (
+              <button 
+                onClick={handleSubmitQuiz}
+                style={{
+                  marginTop: '20px',
+                  padding: '12px 24px',
+                  backgroundColor: 'var(--gold)',
+                  color: '#000',
+                  border: 'none',
+                  borderRadius: '4px',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer'
+                }}
+              >
+                Submit Quiz
+              </button>
+            ) : (
+              <div style={{
+                marginTop: '30px',
+                padding: '20px',
+                backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                border: '1px solid var(--gold)',
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <h2 style={{ color: 'var(--gold)', marginBottom: '10px' }}>Quiz Completed!</h2>
+                <h3 style={{ fontSize: '24px' }}>Score: {score} / {story.questions.length}</h3>
+              </div>
+            )}
           </section>
         )}
 

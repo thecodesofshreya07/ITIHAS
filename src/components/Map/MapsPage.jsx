@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar/Navbar";
-import Map from "../components/Map/Map";
-import "./Home.css";
+import Navbar from "../Navbar/Navbar";
+import Map from "./Map";
+import "../../pages/Home.css";
 
 export default function MapsPage() {
   return (
@@ -18,4 +18,3 @@ export default function MapsPage() {
     </>
   );
 }
-

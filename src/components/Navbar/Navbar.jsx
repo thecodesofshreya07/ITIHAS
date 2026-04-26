@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       {/* Logo */}
-      <Link to="/home" className="nav-logo" onClick={closeMenu}>
+      <Link to="/" className="nav-logo" onClick={closeMenu}>
         ITIHAAS
       </Link>
 
@@ -75,7 +75,6 @@ export default function Navbar() {
       <div className="nav-auth">
         {user ? (
           <div className="user-profile">
-            <Link to="/profile" className="user-name">Hello, {user.name.split(' ')[0]}</Link>
             <button onClick={handleLogout} className="logout-btn">Logout</button>
           </div>
         ) : (

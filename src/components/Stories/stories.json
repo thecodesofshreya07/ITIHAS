@@ -9,22 +9,259 @@
     "region": "Asia",
     "shortDescription": "One of the world's earliest urban civilizations, known for its advanced city planning and drainage systems.",
     "sections": {
-      "background": "Flourishing along the Indus River, this civilization was a bronze age society that reached its peak around 2600 BCE. Its cities like Harappa and Mohenjo-Daro were marvels of engineering.",
-      "trigger": "The discovery of Harappa in the 1920s revealed a sophisticated society that had been forgotten for millennia.",
-      "majorEvents": "The development of a unique script, standard weights and measures, and extensive trade networks reaching as far as Mesopotamia.",
-      "consequences": "Its decline around 1900 BCE remains a mystery, though climate change and shifting river patterns are often cited.",
-      "globalImpact": "It set early standards for urban planning and hygiene that are still studied by archaeologists today."
+      "background": "Flourishing along the Indus River in what is now Pakistan and northwest India, this civilization was a bronze age society that reached its peak around 2600 BCE. Its cities like Harappa and Mohenjo-Daro were marvels of engineering, featuring multistory houses built with baked bricks.",
+      "trigger": "The discovery of Harappa in the 1920s by British and Indian archaeologists revealed a sophisticated society that had been forgotten for millennia, profoundly altering the historical timeline of the Indian subcontinent.",
+      "majorEvents": "The development of a unique, yet undeciphered script, standard weights and measures, and extensive trade networks reaching as far as Mesopotamia and Egypt. They had a peaceful society with no evidence of major weapons or armies.",
+      "consequences": "Its decline around 1900 BCE remains a mystery. Theories include climate change, tectonic shifts altering river patterns (such as the drying up of the Sarasvati River), and possible Aryan migrations.",
+      "globalImpact": "It set early standards for urban planning, metallurgy, and hygiene that are still studied by archaeologists today."
     },
-    "didYouKnow": "The Indus Valley people developed a system of standardized weights and measures that was used across their entire territory.",
-    "quiz": [
-      {
-        "question": "Which river system was central to this civilization?",
-        "options": ["Nile", "Indus", "Yellow River", "Tigris"],
-        "correctIndex": 1
-      }
-    ],
+    "didYouKnow": "The Indus Valley people developed a system of standardized weights and measures that was used across their entire territory, ensuring fair trade.",
     "previousEventId": null,
-    "nextEventId": "magna-carta"
+    "nextEventId": "ancient-rome",
+    "questions": [
+      {
+        "question": "Which river was central to this civilization?",
+        "options": [
+          "Nile",
+          "Indus",
+          "Yellow River",
+          "Tigris"
+        ],
+        "correctAnswer": "Indus",
+        "explanation": "The correct answer is Indus. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "What is a major characteristic of Indus cities?",
+        "options": [
+          "Pyramids",
+          "Advanced drainage",
+          "Colosseums",
+          "Castles"
+        ],
+        "correctAnswer": "Advanced drainage",
+        "explanation": "The correct answer is Advanced drainage. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "Which was a major city in the Indus Valley?",
+        "options": [
+          "Mohenjo-Daro",
+          "Athens",
+          "Rome",
+          "Sparta"
+        ],
+        "correctAnswer": "Mohenjo-Daro",
+        "explanation": "The correct answer is Mohenjo-Daro. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "What material were many Indus seals made of?",
+        "options": [
+          "Gold",
+          "Steatite",
+          "Iron",
+          "Wood"
+        ],
+        "correctAnswer": "Steatite",
+        "explanation": "The correct answer is Steatite. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "Has the Indus script been fully deciphered?",
+        "options": [
+          "Yes",
+          "No",
+          "Partially",
+          "It was never written"
+        ],
+        "correctAnswer": "No",
+        "explanation": "The correct answer is No. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "What did the uniform weights suggest?",
+        "options": [
+          "Chaos",
+          "No trade",
+          "Organized administration",
+          "Nomads"
+        ],
+        "correctAnswer": "Organized administration",
+        "explanation": "The correct answer is Organized administration. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "When did the civilization peak?",
+        "options": [
+          "2600 BCE",
+          "1000 CE",
+          "1900 AD",
+          "500 BCE"
+        ],
+        "correctAnswer": "2600 BCE",
+        "explanation": "The correct answer is 2600 BCE. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "What was a likely cause of its decline?",
+        "options": [
+          "Alien invasion",
+          "Climate change",
+          "Roman conquest",
+          "Industrialization"
+        ],
+        "correctAnswer": "Climate change",
+        "explanation": "The correct answer is Climate change. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "What animals were commonly depicted on seals?",
+        "options": [
+          "Dinosaurs",
+          "Dragons",
+          "Bulls and unicorns",
+          "Penguins"
+        ],
+        "correctAnswer": "Bulls and unicorns",
+        "explanation": "The correct answer is Bulls and unicorns. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      },
+      {
+        "question": "What material was heavily used for building houses?",
+        "options": [
+          "Marble",
+          "Baked bricks",
+          "Glass",
+          "Steel"
+        ],
+        "correctAnswer": "Baked bricks",
+        "explanation": "The correct answer is Baked bricks. This key historical point had lasting consequences during the The Indus Valley Civilization period."
+      }
+    ]
+  },
+  {
+    "id": "ancient-rome",
+    "title": "The Roman Empire",
+    "period": "27 BCE – 476 CE",
+    "location": "Europe, North Africa, Middle East",
+    "category": "Ancient Civilizations",
+    "era": "Ancient",
+    "region": "Europe",
+    "shortDescription": "A colossal empire that shaped Western civilization's laws, languages, and architecture.",
+    "sections": {
+      "background": "Beginning as a small city-state on the Italian peninsula, Rome evolved into a Republic and eventually an Empire. Augustus Caesar became the first Emperor in 27 BCE after the fall of the Republic.",
+      "trigger": "The assassination of Julius Caesar in 44 BCE led to a series of civil wars, culminating in Augustus consolidating absolute power and initiating the Pax Romana.",
+      "majorEvents": "The construction of the Colosseum, the expansion under Trajan to its greatest territorial extent, and the eventual split into the Western and Eastern (Byzantine) Empires.",
+      "consequences": "The fall of the Western Roman Empire in 476 CE plunged Europe into the Early Middle Ages, while the East survived for another thousand years.",
+      "globalImpact": "Roman legal principles, the Latin language (which birthed the Romance languages), and architectural innovations like concrete and arches form the bedrock of Western society."
+    },
+    "didYouKnow": "The Romans used a special type of volcanic ash to make their concrete, which was so durable that many Roman structures like the Pantheon still stand today.",
+    "previousEventId": "indus-valley",
+    "nextEventId": "magna-carta",
+    "questions": [
+      {
+        "question": "Who was the first Emperor of Rome?",
+        "options": [
+          "Julius Caesar",
+          "Nero",
+          "Augustus Caesar",
+          "Constantine"
+        ],
+        "correctAnswer": "Augustus Caesar",
+        "explanation": "The correct answer is Augustus Caesar. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "Which river flows through the city of Rome?",
+        "options": [
+          "Tiber",
+          "Nile",
+          "Rhine",
+          "Thames"
+        ],
+        "correctAnswer": "Tiber",
+        "explanation": "The correct answer is Tiber. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "What was the large amphitheater built for gladiatorial contests?",
+        "options": [
+          "Pantheon",
+          "Colosseum",
+          "Parthenon",
+          "Circus Maximus"
+        ],
+        "correctAnswer": "Colosseum",
+        "explanation": "The correct answer is Colosseum. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "Which Roman general conquered Gaul and crossed the Rubicon?",
+        "options": [
+          "Scipio",
+          "Pompey",
+          "Julius Caesar",
+          "Marc Antony"
+        ],
+        "correctAnswer": "Julius Caesar",
+        "explanation": "The correct answer is Julius Caesar. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "What language did the ancient Romans speak?",
+        "options": [
+          "Greek",
+          "Latin",
+          "Aramaic",
+          "Hebrew"
+        ],
+        "correctAnswer": "Latin",
+        "explanation": "The correct answer is Latin. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "In what year did the Western Roman Empire fall?",
+        "options": [
+          "476 CE",
+          "1453 CE",
+          "27 BCE",
+          "44 BCE"
+        ],
+        "correctAnswer": "476 CE",
+        "explanation": "The correct answer is 476 CE. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "What was the Pax Romana?",
+        "options": [
+          "A brutal war",
+          "A period of peace",
+          "A religious cult",
+          "A type of sword"
+        ],
+        "correctAnswer": "A period of peace",
+        "explanation": "The correct answer is A period of peace. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "Which engineering feat supplied Rome with water?",
+        "options": [
+          "Windmills",
+          "Aqueducts",
+          "Dams",
+          "Wells"
+        ],
+        "correctAnswer": "Aqueducts",
+        "explanation": "The correct answer is Aqueducts. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "Who was the legendary founder of Rome?",
+        "options": [
+          "Romulus",
+          "Remus",
+          "Aeneas",
+          "Hercules"
+        ],
+        "correctAnswer": "Romulus",
+        "explanation": "The correct answer is Romulus. This key historical point had lasting consequences during the The Roman Empire period."
+      },
+      {
+        "question": "What volcano destroyed the city of Pompeii?",
+        "options": [
+          "Mount Etna",
+          "Mount Vesuvius",
+          "Mount Olympus",
+          "Mount Sinai"
+        ],
+        "correctAnswer": "Mount Vesuvius",
+        "explanation": "The correct answer is Mount Vesuvius. This key historical point had lasting consequences during the The Roman Empire period."
+      }
+    ]
   },
   {
     "id": "magna-carta",
@@ -36,22 +273,127 @@
     "region": "Europe",
     "shortDescription": "A royal charter forced upon King John that established for the first time that the king was subject to the rule of law.",
     "sections": {
-      "background": "King John of England was an unpopular monarch who had lost vast territories in France and exhausted the treasury. By 1215, the barons' grievances had reached a breaking point.",
-      "trigger": "In May 1215, rebel barons renounced their loyalty to John and captured London, forcing him to negotiate.",
-      "majorEvents": "On June 15, 1215, King John affixed his seal to the charter at Runnymede. It established that no free man could be imprisoned except by the lawful judgment of his peers.",
-      "consequences": "Successive monarchs reissued it, and it became a cornerstone of English common law.",
-      "globalImpact": "Its philosophy influenced constitutional documents worldwide, including the U.S. Constitution's Bill of Rights."
+      "background": "King John of England was an unpopular monarch who had lost vast territories in France and exhausted the treasury through disastrous wars. By 1215, the barons' financial and political grievances had reached a breaking point.",
+      "trigger": "In May 1215, rebel barons renounced their loyalty to King John and captured London, forcing him to negotiate at a meadow called Runnymede.",
+      "majorEvents": "On June 15, 1215, King John affixed his seal to the charter. It established core legal principles, importantly that no free man could be imprisoned or stripped of rights except by the lawful judgment of his peers.",
+      "consequences": "Although the original charter was quickly annulled by the Pope, successive monarchs reissued it. It evolved into a cornerstone of English common law.",
+      "globalImpact": "Its philosophy influenced constitutional documents worldwide, deeply inspiring the drafters of the U.S. Constitution and the Universal Declaration of Human Rights."
     },
-    "didYouKnow": "Only three clauses of the original 1215 Magna Carta remain on the statute books of England and Wales today.",
-    "quiz": [
+    "didYouKnow": "Only three clauses of the original 1215 Magna Carta remain on the statute books of England and Wales today, including the protection of the Church and the City of London.",
+    "previousEventId": "ancient-rome",
+    "nextEventId": "american-revolution",
+    "questions": [
       {
         "question": "Where was the Magna Carta sealed?",
-        "options": ["Westminster", "Windsor Castle", "Runnymede", "Canterbury"],
-        "correctIndex": 2
+        "options": [
+          "Westminster",
+          "Windsor Castle",
+          "Runnymede",
+          "Canterbury"
+        ],
+        "correctAnswer": "Runnymede",
+        "explanation": "The correct answer is Runnymede. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "Which king sealed the Magna Carta?",
+        "options": [
+          "King Arthur",
+          "King Richard",
+          "King John",
+          "King Henry VIII"
+        ],
+        "correctAnswer": "King John",
+        "explanation": "The correct answer is King John. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "In what year was it signed?",
+        "options": [
+          "1066",
+          "1215",
+          "1492",
+          "1776"
+        ],
+        "correctAnswer": "1215",
+        "explanation": "The correct answer is 1215. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "What was the main purpose of the Magna Carta?",
+        "options": [
+          "Declare independence",
+          "Limit the king's power",
+          "Start a war",
+          "Establish a new religion"
+        ],
+        "correctAnswer": "Limit the king's power",
+        "explanation": "The correct answer is Limit the king's power. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "Who forced the king to sign it?",
+        "options": [
+          "The peasants",
+          "The Pope",
+          "The rebel barons",
+          "The French"
+        ],
+        "correctAnswer": "The rebel barons",
+        "explanation": "The correct answer is The rebel barons. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "What language was it originally written in?",
+        "options": [
+          "English",
+          "French",
+          "Latin",
+          "German"
+        ],
+        "correctAnswer": "Latin",
+        "explanation": "The correct answer is Latin. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "Did the Pope support the Magna Carta?",
+        "options": [
+          "Yes",
+          "No, he annulled it",
+          "He was neutral",
+          "He wrote it"
+        ],
+        "correctAnswer": "No, he annulled it",
+        "explanation": "The correct answer is No, he annulled it. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "What modern document did it heavily influence?",
+        "options": [
+          "Communist Manifesto",
+          "U.S. Constitution",
+          "Treaty of Versailles",
+          "Hammurabi's Code"
+        ],
+        "correctAnswer": "U.S. Constitution",
+        "explanation": "The correct answer is U.S. Constitution. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "What right did it guarantee to free men?",
+        "options": [
+          "Free housing",
+          "Right to a fair trial",
+          "Right to bear arms",
+          "Free education"
+        ],
+        "correctAnswer": "Right to a fair trial",
+        "explanation": "The correct answer is Right to a fair trial. This key historical point had lasting consequences during the The Magna Carta period."
+      },
+      {
+        "question": "How many clauses remain in English law today?",
+        "options": [
+          "All of them",
+          "About half",
+          "Only three",
+          "None"
+        ],
+        "correctAnswer": "Only three",
+        "explanation": "The correct answer is Only three. This key historical point had lasting consequences during the The Magna Carta period."
       }
-    ],
-    "previousEventId": "indus-valley",
-    "nextEventId": "american-revolution"
+    ]
   },
   {
     "id": "american-revolution",
@@ -63,76 +405,259 @@
     "region": "Americas",
     "shortDescription": "Thirteen British colonies declared independence and forged a new nation founded on Enlightenment ideals of liberty.",
     "sections": {
-      "background": "By the 1760s, Britain's thirteen American colonies had developed a growing sense of self-governance. Costly wars left Britain in debt, leading to new taxes on the colonies.",
-      "trigger": "The Stamp Act and the Boston Tea Party escalated tensions, eventually leading to clashes at Lexington and Concord in 1775.",
-      "majorEvents": "On July 4, 1776, the Declaration of Independence was adopted. The war ended with the British surrender at Yorktown in 1781.",
-      "consequences": "The 1783 Treaty of Paris formally recognized American independence, leading to the creation of the U.S. Constitution in 1787.",
-      "globalImpact": "It proved that colonies could successfully break free from European empires, inspiring movements in France and Latin America."
+      "background": "By the 1760s, Britain's thirteen American colonies had developed a growing sense of self-governance. Costly wars left Britain in severe debt, leading Parliament to levy new, direct taxes on the colonies without their representation.",
+      "trigger": "The Stamp Act, the Boston Massacre, and the Boston Tea Party escalated tensions rapidly. This eventually led to the first armed clashes at Lexington and Concord in 1775.",
+      "majorEvents": "On July 4, 1776, the Continental Congress adopted the Declaration of Independence. The grueling war finally turned when the French allied with the Americans, leading to the decisive British surrender at Yorktown in 1781.",
+      "consequences": "The 1783 Treaty of Paris formally recognized American independence. The new nation subsequently drafted the U.S. Constitution in 1787 to create a strong federal republic.",
+      "globalImpact": "It proved that colonial subjects could successfully break free from European empires, inspiring democratic movements in France, Haiti, and across Latin America."
     },
-    "didYouKnow": "Thomas Jefferson's original draft of the Declaration of Independence contained a passage condemning the slave trade.",
-    "quiz": [
+    "didYouKnow": "Thomas Jefferson's original draft of the Declaration of Independence contained a fiery passage condemning the transatlantic slave trade, but it was removed to appease Southern colonies.",
+    "previousEventId": "magna-carta",
+    "nextEventId": "french-revolution",
+    "questions": [
       {
         "question": "When was the Declaration of Independence adopted?",
-        "options": ["July 4, 1775", "July 4, 1776", "July 4, 1783", "July 4, 1787"],
-        "correctIndex": 1
+        "options": [
+          "July 4, 1775",
+          "July 4, 1776",
+          "July 4, 1783",
+          "July 4, 1787"
+        ],
+        "correctAnswer": "July 4, 1776",
+        "explanation": "The correct answer is July 4, 1776. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "Who was the primary author of the Declaration?",
+        "options": [
+          "George Washington",
+          "John Adams",
+          "Thomas Jefferson",
+          "Benjamin Franklin"
+        ],
+        "correctAnswer": "Thomas Jefferson",
+        "explanation": "The correct answer is Thomas Jefferson. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "Which European country allied with the Americans?",
+        "options": [
+          "Spain",
+          "France",
+          "Germany",
+          "Russia"
+        ],
+        "correctAnswer": "France",
+        "explanation": "The correct answer is France. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "What was the rallying cry against British taxes?",
+        "options": [
+          "Give me liberty or give me death",
+          "No taxation without representation",
+          "Remember the Alamo",
+          "Liberty, Equality, Fraternity"
+        ],
+        "correctAnswer": "No taxation without representation",
+        "explanation": "The correct answer is No taxation without representation. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "Which event involved dumping tea into the harbor?",
+        "options": [
+          "Boston Massacre",
+          "Boston Tea Party",
+          "Stamp Act Protest",
+          "Battle of Bunker Hill"
+        ],
+        "correctAnswer": "Boston Tea Party",
+        "explanation": "The correct answer is Boston Tea Party. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "Who commanded the Continental Army?",
+        "options": [
+          "Thomas Jefferson",
+          "Alexander Hamilton",
+          "George Washington",
+          "Benedict Arnold"
+        ],
+        "correctAnswer": "George Washington",
+        "explanation": "The correct answer is George Washington. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "Where did the British finally surrender?",
+        "options": [
+          "Saratoga",
+          "Yorktown",
+          "Lexington",
+          "Valley Forge"
+        ],
+        "correctAnswer": "Yorktown",
+        "explanation": "The correct answer is Yorktown. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "What treaty ended the war in 1783?",
+        "options": [
+          "Treaty of Paris",
+          "Treaty of Versailles",
+          "Treaty of Ghent",
+          "Treaty of London"
+        ],
+        "correctAnswer": "Treaty of Paris",
+        "explanation": "The correct answer is Treaty of Paris. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "What document replaced the Articles of Confederation?",
+        "options": [
+          "Bill of Rights",
+          "U.S. Constitution",
+          "Magna Carta",
+          "Emancipation Proclamation"
+        ],
+        "correctAnswer": "U.S. Constitution",
+        "explanation": "The correct answer is U.S. Constitution. This key historical point had lasting consequences during the The American Revolution period."
+      },
+      {
+        "question": "Which king ruled Britain during the revolution?",
+        "options": [
+          "King George III",
+          "King Henry VIII",
+          "King Edward VII",
+          "King James II"
+        ],
+        "correctAnswer": "King George III",
+        "explanation": "The correct answer is King George III. This key historical point had lasting consequences during the The American Revolution period."
       }
-    ],
-    "previousEventId": "magna-carta",
-    "nextEventId": "french-revolution"
+    ]
   },
   {
     "id": "french-revolution",
     "title": "The French Revolution",
     "period": "1789 – 1799",
-    "location": "France, Europe",
+    "location": "France",
     "category": "Political Upheaval",
     "era": "Modern",
     "region": "Europe",
     "shortDescription": "A decade of radical social and political transformation that ended monarchy and reshaped the modern world.",
     "sections": {
-      "background": "By the late 18th century, France was in crisis. A rigid social structure and financial depletion under Louis XVI fueled widespread discontent.",
-      "trigger": "The storming of the Bastille on July 14, 1789, ignited the revolution after the Third Estate demanded greater representation.",
-      "majorEvents": "Abolition of feudalism, the Declaration of the Rights of Man, and the execution of Louis XVI in 1793.",
-      "consequences": "The end of absolute monarchy and the emergence of Napoleon Bonaparte.",
-      "globalImpact": "Its ideals of liberty and equality became rallying cries for reformers and revolutionaries worldwide."
+      "background": "By the late 18th century, France was in severe economic crisis. A rigid social structure (the Three Estates) burdened the commoners with taxes while the clergy and nobility paid nearly nothing, fueling widespread resentment against Louis XVI.",
+      "trigger": "The storming of the Bastille prison on July 14, 1789, ignited the revolution after the Third Estate broke away to form the National Assembly.",
+      "majorEvents": "The abolition of feudalism, the drafting of the Declaration of the Rights of Man, the Reign of Terror led by Robespierre, and the execution of King Louis XVI and Marie Antoinette.",
+      "consequences": "The revolution dismantled the absolute monarchy and traditional feudal systems, but the ensuing chaos paved the way for the rise of a military dictator, Napoleon Bonaparte.",
+      "globalImpact": "Its ideals of 'Liberty, Equality, Fraternity' became rallying cries for reformers worldwide, fundamentally altering modern political philosophy."
     },
-    "didYouKnow": "The word 'guillotine' comes from Dr. Joseph-Ignace Guillotin, who proposed it as a more humane execution method.",
-    "quiz": [
+    "didYouKnow": "The word 'guillotine' comes from Dr. Joseph-Ignace Guillotin, who proposed it not out of cruelty, but as a more humane and egalitarian method of execution.",
+    "previousEventId": "american-revolution",
+    "nextEventId": "industrial-revolution",
+    "questions": [
       {
         "question": "What event is considered the symbolic start of the revolution?",
-        "options": ["Tennis Court Oath", "March on Versailles", "Storming of the Bastille", "Louis XVI's execution"],
-        "correctIndex": 2
-      }
-    ],
-    "previousEventId": "american-revolution",
-    "nextEventId": "napoleonic-wars"
-  },
-  {
-    "id": "napoleonic-wars",
-    "title": "The Napoleonic Wars",
-    "period": "1803 – 1815",
-    "location": "Europe, Middle East, Americas",
-    "category": "Military Conflict",
-    "era": "Modern",
-    "region": "Europe",
-    "shortDescription": "Napoleon Bonaparte's military campaigns reshaped Europe's political map and spread revolutionary ideals across the continent.",
-    "sections": {
-      "background": "Napoleon rose through the military to become Emperor, dominating the continent through brilliant tactics.",
-      "trigger": "His coronation and aggressive annexation of territories alarmed European monarchies, leading to formed coalitions against him.",
-      "majorEvents": "Triumph at Austerlitz, defeat at Trafalgar, the disastrous invasion of Russia, and final defeat at Waterloo in 1815.",
-      "consequences": "The Congress of Vienna redrew Europe's map, but the Napoleonic Code remained a legal foundation for many nations.",
-      "globalImpact": "Triggered independence movements in Latin America and accelerated nationalism in Germany and Italy."
-    },
-    "didYouKnow": "Napoleon was actually of average height (5'7\") for his era, despite the myth that he was short.",
-    "quiz": [
+        "options": [
+          "Tennis Court Oath",
+          "March on Versailles",
+          "Storming of the Bastille",
+          "Execution of Louis XVI"
+        ],
+        "correctAnswer": "Storming of the Bastille",
+        "explanation": "The Storming of the Bastille on July 14, 1789 is considered the symbolic beginning of the French Revolution because it represented the uprising against royal authority."
+      },
       {
-        "question": "Where was Napoleon finally defeated in 1815?",
-        "options": ["Austerlitz", "Leipzig", "Waterloo", "Moscow"],
-        "correctIndex": 2
+        "question": "Who was the King of France during the revolution?",
+        "options": [
+          "Louis XIV",
+          "Louis XV",
+          "Louis XVI",
+          "Napoleon"
+        ],
+        "correctAnswer": "Louis XVI",
+        "explanation": "The correct answer is Louis XVI. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "What was the socio-economic structure called?",
+        "options": [
+          "The Three Estates",
+          "The Feudal System",
+          "The Monarchy",
+          "The Republic"
+        ],
+        "correctAnswer": "The Three Estates",
+        "explanation": "The correct answer is The Three Estates. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "Which estate represented the commoners?",
+        "options": [
+          "First Estate",
+          "Second Estate",
+          "Third Estate",
+          "Fourth Estate"
+        ],
+        "correctAnswer": "Third Estate",
+        "explanation": "The correct answer is Third Estate. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "What was the motto of the revolution?",
+        "options": [
+          "No taxation without representation",
+          "Liberty, Equality, Fraternity",
+          "God and my right",
+          "Peace, Land, Bread"
+        ],
+        "correctAnswer": "Liberty, Equality, Fraternity",
+        "explanation": "The correct answer is Liberty, Equality, Fraternity. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "Who was a key leader during the Reign of Terror?",
+        "options": [
+          "Lafayette",
+          "Robespierre",
+          "Danton",
+          "Marat"
+        ],
+        "correctAnswer": "Robespierre",
+        "explanation": "The correct answer is Robespierre. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "What device was famously used for executions?",
+        "options": [
+          "The Noose",
+          "The Guillotine",
+          "The Axe",
+          "The Firing Squad"
+        ],
+        "correctAnswer": "The Guillotine",
+        "explanation": "The correct answer is The Guillotine. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "Which famous document was drafted in 1789?",
+        "options": [
+          "Magna Carta",
+          "Declaration of the Rights of Man",
+          "Bill of Rights",
+          "Code Napoleon"
+        ],
+        "correctAnswer": "Declaration of the Rights of Man",
+        "explanation": "The correct answer is Declaration of the Rights of Man. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "Who rose to power at the end of the revolution?",
+        "options": [
+          "Louis XVIII",
+          "Maximilien Robespierre",
+          "Napoleon Bonaparte",
+          "Charles de Gaulle"
+        ],
+        "correctAnswer": "Napoleon Bonaparte",
+        "explanation": "The correct answer is Napoleon Bonaparte. This key historical point had lasting consequences during the The French Revolution period."
+      },
+      {
+        "question": "Which famous palace did the women of Paris march to in 1789?",
+        "options": [
+          "Louvre",
+          "Versailles",
+          "Tuileries",
+          "Bastille"
+        ],
+        "correctAnswer": "Versailles",
+        "explanation": "The correct answer is Versailles. This key historical point had lasting consequences during the The French Revolution period."
       }
-    ],
-    "previousEventId": "french-revolution",
-    "nextEventId": "industrial-revolution"
+    ]
   },
   {
     "id": "industrial-revolution",
@@ -142,50 +667,260 @@
     "category": "Social & Economic",
     "era": "Modern",
     "region": "Europe",
-    "shortDescription": "A transformation from agrarian hand-production to machine manufacturing that permanently altered human civilization.",
+    "shortDescription": "A rapid transformation from agrarian hand-production to machine manufacturing that permanently altered human civilization.",
     "sections": {
-      "background": "Britain's unique convergence of coal, iron, and financial systems made it the cradle of industrial change.",
-      "trigger": "James Watt's improved steam engine in 1769 made large-scale mechanized industry possible.",
-      "majorEvents": "Appearance of textile mills, development of railways, and the widespread use of steam power.",
-      "consequences": "Massive urbanization, the expansion of the middle class, and the rise of trade unions.",
-      "globalImpact": "Powered Britain's imperial expansion and set the foundation for modern environmental challenges."
+      "background": "Britain possessed a unique convergence of abundant coal, iron ore, stable financial systems, and overseas colonies, making it the perfect cradle for industrial change.",
+      "trigger": "James Watt's vastly improved steam engine in 1769 made large-scale mechanized industry possible outside of areas with fast-flowing rivers.",
+      "majorEvents": "The explosive growth of mechanized textile mills, the development of steam-powered railways, and the massive migration of rural populations to burgeoning factory cities like Manchester.",
+      "consequences": "It created massive urbanization, terrible initial working conditions (leading to the rise of trade unions and child labor laws), and a wealthy new industrial middle class.",
+      "globalImpact": "It powered Britain's global imperial expansion, fundamentally changed human ecology, and set the foundation for the modern technological world."
     },
-    "didYouKnow": "The word 'Luddite' comes from Ned Ludd, who smashed machines in protest of undercutting worker wages.",
-    "quiz": [
+    "didYouKnow": "The word 'Luddite' comes from a legendary figure named Ned Ludd, who supposedly smashed textile machines in protest of technology undercutting worker wages.",
+    "previousEventId": "french-revolution",
+    "nextEventId": "world-war-one",
+    "questions": [
       {
         "question": "Whose improved steam engine was central to the revolution?",
-        "options": ["Richard Arkwright", "George Stephenson", "James Watt", "Isambard Kingdom Brunel"],
-        "correctIndex": 2
+        "options": [
+          "Richard Arkwright",
+          "George Stephenson",
+          "James Watt",
+          "Isambard Kingdom Brunel"
+        ],
+        "correctAnswer": "James Watt",
+        "explanation": "The correct answer is James Watt. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "Where did the Industrial Revolution begin?",
+        "options": [
+          "France",
+          "Germany",
+          "United States",
+          "Britain"
+        ],
+        "correctAnswer": "Britain",
+        "explanation": "The correct answer is Britain. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "Which industry was the first to be mechanized?",
+        "options": [
+          "Agriculture",
+          "Textiles",
+          "Mining",
+          "Transportation"
+        ],
+        "correctAnswer": "Textiles",
+        "explanation": "The correct answer is Textiles. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "What new form of transportation revolutionized travel?",
+        "options": [
+          "Airplanes",
+          "Automobiles",
+          "Steam Railways",
+          "Bicycles"
+        ],
+        "correctAnswer": "Steam Railways",
+        "explanation": "The correct answer is Steam Railways. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "What social class grew significantly during this time?",
+        "options": [
+          "The Nobility",
+          "The Peasantry",
+          "The Middle Class",
+          "The Clergy"
+        ],
+        "correctAnswer": "The Middle Class",
+        "explanation": "The correct answer is The Middle Class. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "What fuel powered most of the early steam engines?",
+        "options": [
+          "Wood",
+          "Oil",
+          "Coal",
+          "Solar"
+        ],
+        "correctAnswer": "Coal",
+        "explanation": "The correct answer is Coal. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "What were the protesters who smashed machines called?",
+        "options": [
+          "Jacobins",
+          "Luddites",
+          "Chartists",
+          "Bolsheviks"
+        ],
+        "correctAnswer": "Luddites",
+        "explanation": "The correct answer is Luddites. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "What was a major negative consequence in early cities?",
+        "options": [
+          "Too much free time",
+          "Severe pollution and disease",
+          "Lack of food",
+          "Empty factories"
+        ],
+        "correctAnswer": "Severe pollution and disease",
+        "explanation": "The correct answer is Severe pollution and disease. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "Which invention revolutionized communication?",
+        "options": [
+          "Telephone",
+          "Telegraph",
+          "Radio",
+          "Television"
+        ],
+        "correctAnswer": "Telegraph",
+        "explanation": "The correct answer is Telegraph. This key historical point had lasting consequences during the The Industrial Revolution period."
+      },
+      {
+        "question": "What system replaced the domestic/putting-out system?",
+        "options": [
+          "The Factory System",
+          "The Feudal System",
+          "The Guild System",
+          "The Barter System"
+        ],
+        "correctAnswer": "The Factory System",
+        "explanation": "The correct answer is The Factory System. This key historical point had lasting consequences during the The Industrial Revolution period."
       }
-    ],
-    "previousEventId": "napoleonic-wars",
-    "nextEventId": "world-war-one"
+    ]
   },
   {
     "id": "world-war-one",
     "title": "The First World War",
     "period": "1914 – 1918",
-    "location": "Europe, Global",
+    "location": "Global",
     "category": "Military Conflict",
     "era": "Modern",
-    "region": "Europe",
-    "shortDescription": "A catastrophic global conflict that dismantled empires, reshaped borders, and left 20 million dead.",
+    "region": "Global",
+    "shortDescription": "A catastrophic global conflict that dismantled empires, reshaped borders, and introduced horrific modern warfare.",
     "sections": {
-      "background": "Europe was a powder keg of alliance systems, arms races, and rising nationalism by 1914.",
-      "trigger": "The assassination of Archduke Franz Ferdinand in Sarajevo triggered a chain of events leading to global war.",
-      "majorEvents": "Trench warfare on the Western Front, the Battle of the Somme, and the 1917 entry of the U.S.",
-      "consequences": "The Treaty of Versailles imposed harsh terms on Germany and dismantled four major empires.",
-      "globalImpact": "Redrew the world map, accelerated decolonization, and set the stage for World War II."
+      "background": "Europe was a powder keg by 1914, entangled in complex alliance systems, intense imperial rivalries, naval arms races, and aggressive rising nationalism.",
+      "trigger": "The assassination of Austro-Hungarian Archduke Franz Ferdinand by a Serbian nationalist in Sarajevo triggered a rapid chain reaction of war declarations.",
+      "majorEvents": "Years of brutal trench warfare on the Western Front, the introduction of tanks and chemical weapons, the Russian Revolution in 1917, and the crucial entry of the United States.",
+      "consequences": "The war left approximately 20 million dead. The harsh Treaty of Versailles humiliated Germany, while the conflict destroyed the Russian, German, Austro-Hungarian, and Ottoman empires.",
+      "globalImpact": "It completely redrew the map of the Middle East and Eastern Europe, accelerated anti-colonial movements, and set the volatile stage for World War II just two decades later."
     },
-    "didYouKnow": "The Christmas Truce of 1914 saw soldiers spontaneously stop fighting to exchange food and play football.",
-    "quiz": [
+    "didYouKnow": "During the Christmas Truce of 1914, opposing soldiers spontaneously left their trenches to exchange food, sing carols, and even play football in No Man's Land.",
+    "previousEventId": "industrial-revolution",
+    "nextEventId": null,
+    "questions": [
       {
         "question": "Whose assassination triggered WWI?",
-        "options": ["Kaiser Wilhelm II", "Archduke Franz Ferdinand", "Tsar Nicholas II", "King Edward VII"],
-        "correctIndex": 1
+        "options": [
+          "Kaiser Wilhelm II",
+          "Archduke Franz Ferdinand",
+          "Tsar Nicholas II",
+          "King Edward VII"
+        ],
+        "correctAnswer": "Archduke Franz Ferdinand",
+        "explanation": "The correct answer is Archduke Franz Ferdinand. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "In what year did WWI begin?",
+        "options": [
+          "1912",
+          "1914",
+          "1917",
+          "1939"
+        ],
+        "correctAnswer": "1914",
+        "explanation": "The correct answer is 1914. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "Which type of warfare characterized the Western Front?",
+        "options": [
+          "Naval battles",
+          "Trench warfare",
+          "Guerilla warfare",
+          "Aerial dogfights"
+        ],
+        "correctAnswer": "Trench warfare",
+        "explanation": "The correct answer is Trench warfare. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "Which major power exited the war early due to revolution?",
+        "options": [
+          "France",
+          "Britain",
+          "Russia",
+          "Italy"
+        ],
+        "correctAnswer": "Russia",
+        "explanation": "The correct answer is Russia. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "When did the United States enter the war?",
+        "options": [
+          "1914",
+          "1915",
+          "1917",
+          "1918"
+        ],
+        "correctAnswer": "1917",
+        "explanation": "The correct answer is 1917. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "What new weapon caused horrific casualties in the trenches?",
+        "options": [
+          "Atomic bombs",
+          "Poison gas",
+          "Crossbows",
+          "Drones"
+        ],
+        "correctAnswer": "Poison gas",
+        "explanation": "The correct answer is Poison gas. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "What treaty officially ended the war with Germany?",
+        "options": [
+          "Treaty of Paris",
+          "Treaty of Versailles",
+          "Treaty of Tordesillas",
+          "Treaty of Vienna"
+        ],
+        "correctAnswer": "Treaty of Versailles",
+        "explanation": "The correct answer is Treaty of Versailles. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "What international organization was formed after WWI?",
+        "options": [
+          "United Nations",
+          "NATO",
+          "League of Nations",
+          "European Union"
+        ],
+        "correctAnswer": "League of Nations",
+        "explanation": "The correct answer is League of Nations. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "Which empire collapsed as a result of the war?",
+        "options": [
+          "British Empire",
+          "French Empire",
+          "Ottoman Empire",
+          "Spanish Empire"
+        ],
+        "correctAnswer": "Ottoman Empire",
+        "explanation": "The correct answer is Ottoman Empire. This key historical point had lasting consequences during the The First World War period."
+      },
+      {
+        "question": "What was the spontaneous ceasefire in 1914 called?",
+        "options": [
+          "Easter Rising",
+          "Christmas Truce",
+          "Armistice Day",
+          "Summer of Love"
+        ],
+        "correctAnswer": "Christmas Truce",
+        "explanation": "The correct answer is Christmas Truce. This key historical point had lasting consequences during the The First World War period."
       }
-    ],
-    "previousEventId": "industrial-revolution",
-    "nextEventId": null
+    ]
   }
 ]

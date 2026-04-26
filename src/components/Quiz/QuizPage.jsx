@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar/Navbar";
-import HistoryQuiz from "../components/Quiz/HistoryQuiz";
-import "./Home.css";
+import Navbar from "../Navbar/Navbar";
+import HistoryQuiz from "./HistoryQuiz";
+import "../../pages/Home.css";
 
 export default function QuizPage() {
   return (
@@ -18,4 +18,3 @@ export default function QuizPage() {
     </>
   );
 }
-

@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar/Navbar";
-import Timeline from "../components/Timeline/Timeline";
-import "./Home.css";
+import Navbar from "../Navbar/Navbar";
+import Timeline from "./Timeline";
+import "../../pages/Home.css";
 
 export default function TimelinePage() {
   return (
@@ -18,4 +18,3 @@ export default function TimelinePage() {
     </>
   );
 }
-

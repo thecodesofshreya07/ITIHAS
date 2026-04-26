@@ -7,20 +7,24 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const fetchUser = async () => {
     try {
-      const currentUser = getCurrentUser();
+      const currentUser = await getCurrentUser();
       setUser(currentUser);
     } catch (error) {
       console.error("Failed to load user:", error);
     } finally {
       setLoading(false);
     }
+  };
+
+  useEffect(() => {
+    fetchUser();
   }, []);
 
-  const login = (email, password) => {
+  const login = async (email, password) => {
     try {
-      const userData = authLogin(email, password);
+      const userData = await authLogin(email, password);
       setUser(userData);
       return { success: true };
     } catch (error) {
@@ -28,12 +32,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signup = (email, password, name) => {
+  const signup = async (email, password, name) => {
     try {
-      const userData = authSignup(email, password, name);
-      // login happens inside signup in my new utility, but let's be explicit
-      const loggedInUser = authLogin(email, password);
-      setUser(loggedInUser);
+      const userData = await authSignup(email, password, name);
+      setUser(userData);
       return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
@@ -45,13 +47,13 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  const updateProgress = (quizResult) => {
+  const updateProgress = async (quizResult) => {
     if (user) {
       try {
-        const success = authSaveQuiz(user.email, quizResult);
+        const success = await authSaveQuiz(quizResult);
         if (success) {
           // Refresh local state to reflect new activity/progress
-          setUser(getCurrentUser());
+          await fetchUser();
         }
       } catch (error) {
         console.error("Failed to update progress:", error);

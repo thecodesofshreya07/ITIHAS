@@ -222,10 +222,59 @@
 }
 
 @media (max-width: 768px) {
+  .profile-page {
+    padding-top: 80px;
+  }
+
+  .profile-container {
+    padding: 0 16px 40px;
+  }
+
   .profile-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-value {
     font-size: 2rem;
   }
+
+  .quiz-history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .quiz-result {
+    text-align: left;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+  }
+
   .feedback-section {
-    padding: 30px 20px;
+    padding: 24px 16px;
+  }
+
+  .feedback-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
   }
 }
