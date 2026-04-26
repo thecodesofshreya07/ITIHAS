@@ -45,22 +45,23 @@ export default function Navbar() {
         <li><Link to="/maps" onClick={closeMenu}>Maps</Link></li>
         <li><Link to="/stories" onClick={closeMenu}>Stories</Link></li>
         <li><Link to="/quiz" onClick={closeMenu}>Quiz</Link></li>
+        <li><Link to="/bookmarks" onClick={closeMenu}>Bookmarks</Link></li>
         {user && <li><Link to="/profile" onClick={closeMenu}>Profile</Link></li>}
-        
+
         {/* Mobile-only auth section */}
         <li className="mobile-auth-item">
           {user ? (
             <button onClick={handleLogout} className="logout-btn">Logout</button>
           ) : (
             <div className="mobile-auth-btns">
-              <button 
-                onClick={() => { setAuthMode('login'); closeMenu(); }} 
+              <button
+                onClick={() => { setAuthMode('login'); closeMenu(); }}
                 className="login-btn"
               >
                 Login
               </button>
-              <button 
-                onClick={() => { setAuthMode('signup'); closeMenu(); }} 
+              <button
+                onClick={() => { setAuthMode('signup'); closeMenu(); }}
                 className="signup-btn"
               >
                 Sign Up

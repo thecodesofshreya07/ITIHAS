@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import storiesData from "./stories.json";
 import SearchBar from "./SearchBar";
 import FilterBar from "./FilterBar";
+import { isBookmarked, toggleBookmark } from "../../utils/bookmarkUtils";
 import "./Stories.css";
 
 // ── Icon helpers ──────────────────────────────────────────────
@@ -36,11 +37,11 @@ const ArrowIcon = () => (
  */
 const getFilteredStories = (data, search, era, region) => {
   const query = search.toLowerCase().trim();
-  
+
   return data.filter((story) => {
     // Search condition: matches title OR shortDescription
-    const matchesSearch = !query || 
-      story.title.toLowerCase().includes(query) || 
+    const matchesSearch = !query ||
+      story.title.toLowerCase().includes(query) ||
       story.shortDescription.toLowerCase().includes(query);
 
     // Filter condition: Era
@@ -59,6 +60,7 @@ export default function StoriesList() {
   const [search, setSearch] = useState("");
   const [selectedEra, setSelectedEra] = useState("All");
   const [selectedRegion, setSelectedRegion] = useState("All");
+  const [tick, setTick] = useState(0); // For forcing re-render on bookmark toggle
 
   // Derive eras and regions from data for dropdowns
   const eras = useMemo(() => {
@@ -96,12 +98,12 @@ export default function StoriesList() {
 
         {/* ── Controls ── */}
         <div className="controls-bar">
-          <SearchBar 
-            value={search} 
-            onChange={setSearch} 
+          <SearchBar
+            value={search}
+            onChange={setSearch}
             placeholder="Search historical events..."
           />
-          <FilterBar 
+          <FilterBar
             selectedEra={selectedEra}
             onEraChange={setSelectedEra}
             eras={eras}
@@ -123,7 +125,7 @@ export default function StoriesList() {
             <div className="no-results" style={{ gridColumn: "1 / -1", textAlign: "center", padding: "80px 20px" }}>
               <p style={{ fontSize: "24px", color: "var(--gold)", marginBottom: "12px" }}>🏛️ No match found</p>
               <p>We couldn't find any stories matching your criteria. Try adjusting your search or filters.</p>
-              <button 
+              <button
                 onClick={() => { setSearch(""); setSelectedEra("All"); setSelectedRegion("All"); }}
                 style={{
                   background: "none",
@@ -147,7 +149,36 @@ export default function StoriesList() {
                 onClick={() => handleReadMore(story.id)}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
-                  <span className="card-category-tag">{story.era}</span>
+                  <div style={{ display: "flex", gap: "8px" }}>
+                    <span className="card-category-tag">{story.era}</span>
+                    <button
+                      className="bookmark-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark({
+                          id: story.id,
+                          title: story.title,
+                          shortDescription: story.shortDescription,
+                          type: 'story'
+                        });
+                        // Force rerender if needed, or rely on state. 
+                        // For simplicity in a hackathon, we can use a local state or just let the user see it on page refresh 
+                        // but better to have it reactive.
+                        setTick(t => t + 1);
+                      }}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: isBookmarked(story.id) ? "var(--gold)" : "rgba(255,255,255,0.3)",
+                        cursor: "pointer",
+                        fontSize: "1.2rem",
+                        padding: 0,
+                        lineHeight: 1
+                      }}
+                    >
+                      {isBookmarked(story.id) ? "⭐" : "☆"}
+                    </button>
+                  </div>
                   <span style={{ fontSize: "10px", color: "var(--gold-dim)", textTransform: "uppercase", letterSpacing: "0.1em" }}>{story.region}</span>
                 </div>
 

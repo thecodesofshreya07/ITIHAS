@@ -7,19 +7,25 @@ import StoriesPage from "./pages/StoriesPage";
 import QuizPage from "./pages/QuizPage";
 import StoryDetail from "./components/Stories/StoryDetail";
 import ProfilePage from "./pages/ProfilePage";
+import BookmarksPage from "./pages/BookmarksPage";
+import Chatbot from "./components/Chatbot/Chatbot";
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/timeline" element={<TimelinePage />} />
-      <Route path="/maps" element={<MapsPage />} />
-      <Route path="/stories" element={<StoriesPage />} />
-      <Route path="/stories/:id" element={<StoryDetail />} />
-      <Route path="/quiz" element={<QuizPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/maps" element={<MapsPage />} />
+        <Route path="/stories" element={<StoriesPage />} />
+        <Route path="/stories/:id" element={<StoryDetail />} />
+        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/bookmarks" element={<BookmarksPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <Chatbot />
+    </>
   );
 }

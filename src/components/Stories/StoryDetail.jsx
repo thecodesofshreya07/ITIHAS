@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import storiesData from "./stories.json";
+import { isBookmarked, toggleBookmark } from "../../utils/bookmarkUtils";
 import "./Stories.css";
 
 // ── Icons ─────────────────────────────────────────────────────
@@ -45,11 +46,11 @@ const LightbulbIcon = () => (
 );
 
 const SECTION_LABELS = {
-  background:    "Background",
-  trigger:       "Trigger",
-  majorEvents:   "Major Events",
-  consequences:  "Consequences",
-  globalImpact:  "Global Impact",
+  background: "Background",
+  trigger: "Trigger",
+  majorEvents: "Major Events",
+  consequences: "Consequences",
+  globalImpact: "Global Impact",
 };
 
 const OPTION_LETTERS = ["A", "B", "C", "D"];
@@ -73,7 +74,7 @@ function QuizQuestion({ item, index }) {
         {item.options.map((opt, optIdx) => {
           let cls = "quiz-option";
           if (answered) {
-            if (optIdx === selected && isCorrect)  cls += " correct";
+            if (optIdx === selected && isCorrect) cls += " correct";
             else if (optIdx === selected && !isCorrect) cls += " wrong";
             else if (optIdx === item.correctIndex) cls += " revealed-correct";
             else cls += " answered";
@@ -111,7 +112,26 @@ export default function StoryDetail() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    // Stop speaking when navigating away
+    return () => {
+      window.speechSynthesis.cancel();
+    };
   }, [id]);
+
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [tick, setTick] = useState(0);
+
+  const toggleSpeech = (text) => {
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+    } else {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.onend = () => setIsSpeaking(false);
+      window.speechSynthesis.speak(utterance);
+      setIsSpeaking(true);
+    }
+  };
 
   const story = storiesData.find((s) => s.id === id);
 
@@ -151,7 +171,38 @@ export default function StoryDetail() {
 
         {/* ── Header ── */}
         <header className="detail-header">
-          <span className="detail-category-tag">{story.category}</span>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span className="detail-category-tag">{story.category}</span>
+            <div style={{ display: "flex", gap: "15px" }}>
+              <button
+                onClick={() => {
+                  const sectionsText = Object.values(story.sections).join(" ");
+                  toggleSpeech(`${story.title}. ${story.shortDescription}. ${sectionsText}`);
+                }}
+                className="narration-btn"
+                style={{ background: "none", border: "1px solid rgba(255,255,255,0.2)", color: "var(--gold)", borderRadius: "50%", width: "40px", height: "40px", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+                title={isSpeaking ? "Stop Narrator" : "Listen to Story"}
+              >
+                {isSpeaking ? "⏹️" : "🔊"}
+              </button>
+              <button
+                onClick={() => {
+                  toggleBookmark({
+                    id: story.id,
+                    title: story.title,
+                    shortDescription: story.shortDescription,
+                    type: 'story'
+                  });
+                  setTick(t => t + 1);
+                }}
+                className="bookmark-btn"
+                style={{ background: "none", border: "1px solid rgba(255,255,255,0.2)", color: "var(--gold)", borderRadius: "50%", width: "40px", height: "40px", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+                title={isBookmarked(story.id) ? "Remove Bookmark" : "Save Story"}
+              >
+                {isBookmarked(story.id) ? "⭐" : "☆"}
+              </button>
+            </div>
+          </div>
           <h1 className="detail-title">{story.title}</h1>
           <div className="detail-meta-row">
             <span><ClockIcon /> {story.period}</span>
