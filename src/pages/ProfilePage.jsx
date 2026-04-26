@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import Navbar from "../components/Navbar/Navbar";
 import "./ProfilePage.css";
 
 export default function ProfilePage() {
   const { user } = useAuth();
+  const [feedback, setFeedback] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   if (!user) {
     return (
@@ -19,6 +21,23 @@ export default function ProfilePage() {
 
   const { progress } = user;
   const quizzes = progress?.quizzes || [];
+
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+
+  const handleSubmitFeedback = (e) => {
+    e.preventDefault();
+    if (!feedback.trim() && rating === 0) return;
+    
+    // Simulate sending feedback
+    console.log("Feedback submitted:", { feedback, rating });
+    setSubmitted(true);
+    setFeedback("");
+    setRating(0);
+    
+    // Reset success message after 5 seconds
+    setTimeout(() => setSubmitted(false), 5000);
+  };
 
   return (
     <div className="profile-page">
@@ -63,6 +82,43 @@ export default function ProfilePage() {
                 </div>
               ))}
             </div>
+          )}
+        </div>
+
+        <div className="feedback-section">
+          <h2>Share Your Thoughts</h2>
+          <p>Help us improve ITIHAS with your feedback</p>
+          
+          {submitted ? (
+            <div className="feedback-success">
+              <div className="success-icon">✓</div>
+              <p>Thank you for your feedback, Explorer!</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmitFeedback} className="feedback-form">
+              <div className="rating-stars">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <span
+                    key={star}
+                    className={`star ${ (hoverRating || rating) >= star ? 'active' : '' }`}
+                    onClick={() => setRating(star)}
+                    onMouseEnter={() => setHoverRating(star)}
+                    onMouseLeave={() => setHoverRating(0)}
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
+              <textarea
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
+                placeholder="What did you like? What should we add?"
+                required
+              />
+              <button type="submit" className="feedback-submit-btn">
+                Send Message
+              </button>
+            </form>
           )}
         </div>
       </div>
