@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar/Navbar";
-import StoriesList from "../components/Stories/StoriesList";
+import Navbar from "../Navbar/Navbar";
+import StoriesList from "./StoriesList";
 
 export default function StoriesPage() {
   return (

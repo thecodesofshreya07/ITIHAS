@@ -1,69 +1,76 @@
-// Simulated backend using localStorage
-const getHistoryUsers = () => {
-  const users = localStorage.getItem("itihas_users");
-  return users ? JSON.parse(users) : {};
-};
+const API_URL = 'http://localhost:5000/api/auth';
 
-const saveHistoryUsers = (users) => {
-  localStorage.setItem("itihas_users", JSON.stringify(users));
-};
-
-export const signup = (email, password, name) => {
-  const users = getHistoryUsers();
-  if (users[email]) {
-    throw new Error("User already exists");
-  }
-  users[email] = {
-    email,
-    password,
-    name,
-    progress: {
-      quizzes: [], // { title, score, total, date }
-      topicsRead: []
-    }
-  };
-  saveHistoryUsers(users);
-  return users[email];
-};
-
-export const login = (email, password) => {
-  const users = getHistoryUsers();
-  const user = users[email];
-  if (!user || user.password !== password) {
-    throw new Error("Invalid email or password");
-  }
+export const signup = async (email, password, name) => {
+  const response = await fetch(`${API_URL}/signup`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password, name })
+  });
+  const data = await response.json();
+  if (!data.success) throw new Error(data.error);
   
-  // Create a session
-  localStorage.setItem("itihas_session", JSON.stringify({ email: user.email }));
-  return user;
+  localStorage.setItem("itihas_token", data.token);
+  return data.user;
+};
+
+export const login = async (email, password) => {
+  const response = await fetch(`${API_URL}/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
+  const data = await response.json();
+  if (!data.success) throw new Error(data.error);
+  
+  localStorage.setItem("itihas_token", data.token);
+  return data.user;
 };
 
 export const logout = () => {
-  localStorage.removeItem("itihas_session");
+  localStorage.removeItem("itihas_token");
 };
 
 export const isLoggedIn = () => {
-  return !!localStorage.getItem("itihas_session");
+  return !!localStorage.getItem("itihas_token");
 };
 
-export const getCurrentUser = () => {
-  const session = localStorage.getItem("itihas_session");
-  if (!session) return null;
-  
-  const { email } = JSON.parse(session);
-  const users = getHistoryUsers();
-  return users[email] || null;
-};
+export const getCurrentUser = async () => {
+  const token = localStorage.getItem("itihas_token");
+  if (!token) return null;
 
-export const saveQuizProgress = (email, quizResult) => {
-  const users = getHistoryUsers();
-  if (users[email]) {
-    users[email].progress.quizzes.push({
-      ...quizResult,
-      date: new Date().toISOString()
+  try {
+    const response = await fetch(`${API_URL}/me`, {
+      headers: { 'Authorization': `Bearer ${token}` }
     });
-    saveHistoryUsers(users);
-    return true;
+    const data = await response.json();
+    if (!data.success) {
+      logout();
+      return null;
+    }
+    return data.user;
+  } catch (error) {
+    return null;
   }
-  return false;
+};
+
+export const saveQuizProgress = async (quizResult) => {
+  const token = localStorage.getItem("itihas_token");
+  if (!token) return false;
+
+  try {
+    const response = await fetch(`${API_URL}/progress`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      // Note: quizResult will have era, score, etc. 
+      // We pass the fields directly.
+      body: JSON.stringify(quizResult) 
+    });
+    const data = await response.json();
+    return data.success;
+  } catch (error) {
+    return false;
+  }
 };
