@@ -25,7 +25,6 @@ export default function App() {
         <Route path="/bookmarks" element={<BookmarksPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      
       <Chatbot />
     </>
   );
