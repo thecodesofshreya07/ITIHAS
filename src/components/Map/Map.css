@@ -37,33 +37,40 @@
   flex-direction: column;
   gap: 1.75rem;
   width: 100%;
-  min-width: 0;
-  /* flex children can shrink below their content size */
+  min-width: 0;           /* flex children can shrink below their content size */
 }
 
 /* ── Map viewport ────────────────────────────────── */
+/* FIX 1: force proper aspect ratio — replaces min-height approach */
 .map-container {
   position: relative;
-  border-radius: 1.25rem;
-  overflow: hidden;
-  box-shadow: 0 0 40px rgba(201, 161, 74, 0.15);
-  background: radial-gradient(circle at top left,
-      rgba(20, 16, 10, 0.98),
-      rgba(10, 8, 5, 0.98));
   width: 100%;
-  min-height: 360px;
+  aspect-ratio: 16 / 9;
+  border-radius: 1.25rem;
+  overflow: hidden;                        /* FIX 4 (parent side): clips markers at edges */
+  box-shadow: 0 0 40px rgba(201, 161, 74, 0.15);
+  background: radial-gradient(
+    circle at top left,
+    rgba(20, 16, 10, 0.98),
+    rgba(10, 8, 5, 0.98)
+  );
 }
 
+/* FIX 3: explicit width+height so the layer truly fills the container */
 .map-world-background {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.95;
 }
 
+/* FIX 2: SVG must fill the full container — no gaps */
 .map-svg {
   width: 100%;
   height: 100%;
   display: block;
+  /* NOTE: also add preserveAspectRatio="xMidYMid meet" to the <svg> element in Map.jsx */
 }
 
 .map-graticule {
@@ -103,9 +110,12 @@
 }
 
 /* ── Markers ─────────────────────────────────────── */
+/* FIX 4: z-index lifts markers above the SVG layer; overflow:hidden on
+   .map-container (above) clips any marker that drifts outside the viewport */
 .map-marker {
   position: absolute;
   transform: translate(-50%, -50%);
+  z-index: 10;
   border: none;
   background: none;
   cursor: pointer;
@@ -118,9 +128,11 @@
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  background: radial-gradient(circle,
-      rgba(201, 161, 74, 0.75),
-      transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(201, 161, 74, 0.75),
+    transparent 70%
+  );
   opacity: 0.7;
   transform-origin: center;
   animation: map-pulse 1.8s ease-out infinite;
@@ -167,8 +179,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
-  min-width: 0;
-  /* allow header children to shrink */
+  min-width: 0;           /* allow header children to shrink */
 }
 
 .map-card-title {
@@ -241,9 +252,11 @@
   padding: 0.35rem 0.55rem 0.45rem;
   font-size: 0.75rem;
   color: #f5e6c8;
-  background: linear-gradient(to right,
-      rgba(10, 8, 5, 0.98),
-      rgba(20, 16, 10, 0.98));
+  background: linear-gradient(
+    to right,
+    rgba(10, 8, 5, 0.98),
+    rgba(20, 16, 10, 0.98)
+  );
   word-break: break-word;
 }
 
@@ -344,9 +357,11 @@
   padding: 1.2rem 1.4rem 0.4rem;
   border-radius: 1rem;
   border: 1px solid rgba(201, 161, 74, 0.2);
-  background: radial-gradient(circle at top,
-      rgba(20, 16, 10, 0.98),
-      rgba(10, 8, 5, 0.98));
+  background: radial-gradient(
+    circle at top,
+    rgba(20, 16, 10, 0.98),
+    rgba(10, 8, 5, 0.98)
+  );
   box-shadow: 0 0 32px rgba(201, 161, 74, 0.12);
   display: flex;
   flex-direction: column;
@@ -491,20 +506,9 @@
 }
 
 @keyframes map-pulse {
-  0% {
-    transform: scale(0.6);
-    opacity: 0.8;
-  }
-
-  70% {
-    transform: scale(1.1);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1.1);
-    opacity: 0;
-  }
+  0%   { transform: scale(0.6); opacity: 0.8; }
+  70%  { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(1.1); opacity: 0; }
 }
 
 /* ════════════════════════════════════════════════════
@@ -524,10 +528,6 @@
   .map-subtitle {
     font-size: 1.05rem;
     max-width: 860px;
-  }
-
-  .map-container {
-    min-height: 480px;
   }
 
   .map-card-title {
@@ -555,10 +555,6 @@
     font-size: 1.1rem;
     max-width: 1000px;
     margin-bottom: 2.5rem;
-  }
-
-  .map-container {
-    min-height: 560px;
   }
 
   .map-card {
@@ -589,10 +585,6 @@
     padding: 1.75rem 1.25rem 2.5rem;
   }
 
-  .map-container {
-    min-height: 300px;
-  }
-
   .map-card-title {
     font-size: 1.2rem;
   }
@@ -614,7 +606,6 @@
   }
 
   .map-container {
-    min-height: 240px;
     border-radius: 0.9rem;
   }
 
@@ -661,8 +652,7 @@
 /* ── Mobile (max 600px) ─────────────────────────── */
 @media (max-width: 600px) {
   .map-section {
-    padding: 1rem 0.75rem 2rem;
-    /* tighter side padding */
+    padding: 1rem 0.75rem 2rem;  /* tighter side padding */
   }
 
   .map-title {
@@ -670,7 +660,6 @@
   }
 
   .map-container {
-    min-height: 200px;
     border-radius: 0.75rem;
   }
 
@@ -698,8 +687,7 @@
   }
 
   .map-card-image {
-    height: 160px;
-    /* taller single image looks better than two narrow ones */
+    height: 160px;   /* taller single image looks better than two narrow ones */
   }
 
   /* Slider: stack prev/next buttons vertically */
