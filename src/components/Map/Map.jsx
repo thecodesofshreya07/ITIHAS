@@ -122,7 +122,7 @@ const CIVILIZATIONS = [
     description:
       `The Maya civilization flourished in Central America and the Yucatan Peninsula. They are renowned for their highly advanced hieroglyphic writing system—the only fully developed writing system of the pre-Columbian Americas—as well as their art, architecture, mathematics, calendar, and astronomical system. They built towering step-pyramids and complex cities deep within the tropical jungles.`,
     images: [
-      { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/800px-Chichen_Itza_3.jpg", alt: "El Castillo pyramid at Chichen Itza" },
+      { src: "/images/pyramid.jpg", alt: "El Castillo pyramid at Chichen Itza" },
     ],
     markerLonLat: [-89.6, 20.6],
     view: { centerLonLat: [-89, 20], scale: 450 },
