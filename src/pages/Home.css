@@ -47,13 +47,28 @@
 .content-section {
   min-height: 80vh;
   width: 100%;
+  /* FIX 1: was "align-items: center" — that shrank children to content width,
+     causing the Map to overflow off the right edge on mobile */
+  align-items: stretch;
   padding: 100px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* FIX 2: was "text-align: center" — kept for h2/p but Map's internal
+     text-align:left rules in Map.css were being overridden on some browsers */
   text-align: center;
   border-top: 1px solid rgba(201, 161, 74, 0.2);
+  /* FIX 3: prevent any child from ever escaping sideways */
+  overflow-x: hidden;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Map wrapper inside content-section must be full width */
+.content-section > div {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .content-section h2 {
@@ -68,6 +83,9 @@
   max-width: 720px;
   line-height: 1.7;
   opacity: 0.9;
+  /* keep the intro paragraph centred */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Tablet landscape ───────────────────────────── */
@@ -91,7 +109,7 @@
   }
 }
 
-/* ── Tablet portrait — bghome.jpeg ──────────────── */
+/* ── Tablet portrait ────────────────────────────── */
 @media (max-width: 768px) {
   .hero {
     min-height: calc(100vh - 70px);
@@ -126,7 +144,7 @@
   }
 }
 
-/* ── Mobile — bghome.jpeg ───────────────────────── */
+/* ── Mobile ─────────────────────────────────────── */
 @media (max-width: 600px) {
   .hero {
     min-height: calc(100vh - 70px);
@@ -154,7 +172,8 @@
   }
 
   .content-section {
-    padding: 60px 18px;
+    /* FIX 4: tighter padding on small screens so Map has more room */
+    padding: 60px 12px;
     min-height: 0;
   }
 
@@ -175,6 +194,10 @@
 
   .hero p {
     font-size: 14px;
+  }
+
+  .content-section {
+    padding: 50px 8px;
   }
 
   .content-section h2 {
