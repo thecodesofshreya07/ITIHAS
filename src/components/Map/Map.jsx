@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { geoGraticule10, geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import countriesTopo from "world-atlas/countries-110m.json";
@@ -143,22 +143,46 @@ const CONTINENT_LABELS = [
 export default function Map() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // ── FIX: track the real rendered container size ──────────────────────────
+  const containerRef = useRef(null);
+  const [dims, setDims] = useState({ width: 800, height: 450 });
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const update = () => {
+      const { width } = el.getBoundingClientRect();
+      // Keep the same 16:9 aspect ratio used in CSS
+      setDims({ width, height: (width * 9) / 16 });
+    };
+
+    update(); // measure immediately on mount
+
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  // ────────────────────────────────────────────────────────────────────────
+
   const selected = CIVILIZATIONS[currentIndex];
-  const width = 800;
-  const height = 400;
+  const { width, height } = dims;
 
   const countries = useMemo(() => {
-    // world-atlas exports TopoJSON with `objects.countries`
     return feature(countriesTopo, countriesTopo.objects.countries).features;
   }, []);
 
   const projection = useMemo(() => {
     const centerLonLat = selected?.view?.centerLonLat ?? [0, 20];
-    const scale = selected?.view?.scale ?? 155;
+
+    // Scale the D3 projection scale proportionally to the real container width
+    // The original scale values were designed for an 800 px wide container.
+    const scaleFactor = width / 800;
+    const baseScale = selected?.view?.scale ?? 155;
 
     return geoMercator()
       .center(centerLonLat)
-      .scale(scale)
+      .scale(baseScale * scaleFactor)
       .translate([width / 2, height / 2]);
   }, [selected, width, height]);
 
@@ -179,23 +203,20 @@ export default function Map() {
     }
   };
 
-  const handleNext = () => {
-    goToIndex(currentIndex + 1);
-  };
-
-  const handlePrev = () => {
-    goToIndex(currentIndex - 1);
-  };
+  const handleNext = () => goToIndex(currentIndex + 1);
+  const handlePrev = () => goToIndex(currentIndex - 1);
 
   return (
     <div className="map-section">
       <div className="map-layout">
-        <div className="map-container">
+        {/* ── attach ref here so ResizeObserver watches the real container ── */}
+        <div className="map-container" ref={containerRef}>
           <div className="map-world-background">
             <svg
-              viewBox="0 0 800 400"
+              viewBox={`0 0 ${width} ${height}`}
               className="map-svg"
               aria-hidden="true"
+              preserveAspectRatio="xMidYMid meet"
             >
               <defs>
                 <linearGradient id="oceanGradient" x1="0" y1="0" x2="1" y2="1">
@@ -207,7 +228,7 @@ export default function Map() {
                   <stop offset="100%" stopColor="rgba(10,8,5,0)" />
                 </radialGradient>
               </defs>
-              <rect width="800" height="400" fill="url(#oceanGradient)" />
+              <rect width={width} height={height} fill="url(#oceanGradient)" />
 
               <path
                 d={pathGenerator(graticule) ?? ""}
@@ -224,28 +245,20 @@ export default function Map() {
                 ))}
               </g>
 
-              {/* Continent / region labels (very approximate) */}
               <g className="map-continent-labels">
                 {CONTINENT_LABELS.map((label) => {
                   const point = projection(label.lonLat);
                   if (!point) return null;
                   const [x, y] = point;
                   if (x < 0 || x > width || y < 0 || y > height) return null;
-
                   return (
-                    <text
-                      key={label.name}
-                      x={x}
-                      y={y}
-                      className="map-continent-label"
-                    >
+                    <text key={label.name} x={x} y={y} className="map-continent-label">
                       {label.name}
                     </text>
                   );
                 })}
               </g>
 
-              {/* Selected civilization glow */}
               {selectedPoint && (
                 <g className="map-selected-glow">
                   <circle
@@ -271,13 +284,11 @@ export default function Map() {
             const point = projection(civ.markerLonLat);
             if (!point) return null;
             const [x, y] = point;
-
             return (
               <button
                 key={civ.name || index}
                 type="button"
-                className={`map-marker ${index === currentIndex ? "map-marker--active" : ""
-                  }`}
+                className={`map-marker ${index === currentIndex ? "map-marker--active" : ""}`}
                 style={{
                   top: `${(y / height) * 100}%`,
                   left: `${(x / width) * 100}%`,
@@ -304,7 +315,6 @@ export default function Map() {
 
               <p className="map-card-description">{selected.description}</p>
 
-              {/* Detail rows */}
               {(selected.language || selected.government || selected.legacy) && (
                 <div className="map-detail-rows">
                   {selected.language && (
@@ -328,7 +338,6 @@ export default function Map() {
                 </div>
               )}
 
-              {/* Key Facts */}
               {selected.keyFacts && selected.keyFacts.length > 0 && (
                 <div className="map-key-facts">
                   <p className="map-key-facts-label">Key Facts</p>
@@ -361,22 +370,14 @@ export default function Map() {
 
       <div className="map-slider">
         <div className="map-slider-header">
-          <button
-            type="button"
-            className="map-slider-button"
-            onClick={handlePrev}
-          >
+          <button type="button" className="map-slider-button" onClick={handlePrev}>
             ◀ Previous
           </button>
           <div className="map-slider-current">
             <span className="map-slider-label">Currently viewing</span>
             <span className="map-slider-name">{selected?.name}</span>
           </div>
-          <button
-            type="button"
-            className="map-slider-button"
-            onClick={handleNext}
-          >
+          <button type="button" className="map-slider-button" onClick={handleNext}>
             Next ▶
           </button>
         </div>
@@ -395,8 +396,7 @@ export default function Map() {
             <button
               key={civ.name || index}
               type="button"
-              className={`map-slider-tick ${index === currentIndex ? "map-slider-tick--active" : ""
-                }`}
+              className={`map-slider-tick ${index === currentIndex ? "map-slider-tick--active" : ""}`}
               onClick={() => setCurrentIndex(index)}
             >
               <span className="map-slider-tick-dot" />
